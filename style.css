@@ -137,31 +137,7 @@ img
         font-size: 2.5rem;
     }
 
-        .secondPageDiv {
-            grid-template-columns: 1fr; 
-            grid-template-rows: auto; 
-            grid-template-areas: 
-                'text'
-                'carimg'
-                'carbtn'
-                'busimg'
-                'busbtn'
-                'trainimg'
-                'trainbtn';
-        }
-    
-        .carImg,
-        .busImg,
-        .trainImg {
-            max-width: 100%; 
-            max-height: auto; 
-        }
-    
-        .car,
-        .bus,
-        .train {
-            margin-top: 0.5rem; 
-        }
+       
     
     
 }
