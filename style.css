@@ -19,6 +19,35 @@ grid-template-areas:
   '. . . button button .';
 }
 
+.secondPageDiv
+{
+grid-template-columns: repeat(4, 9fr); /* Adjusted */
+grid-template-rows: 1fr 10fr 10fr 10fr min-content;
+grid-template-areas:
+  ' text text text text '
+  '. carimg carbtn .'
+  '. busimg busbtn . '
+  '. trainimg trainbtn . ';
+
+}
+
+.car
+{
+    grid-area: carbtn;
+}
+
+.bus
+{
+    grid-area: busbtn;
+}
+
+.train
+{
+    grid-area: trainbtn;
+}
+
+
+
 h1
 {
 text-align: center;
@@ -70,3 +99,5 @@ img
         font-size: 2.5rem;
     }
 }
+
+
