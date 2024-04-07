@@ -137,7 +137,29 @@ img
         font-size: 2.5rem;
     }
 
-       
+    .secondPageDiv > h5
+    {
+    font-size: 1.5rem;
+    }
+    
+    .car
+    {
+    width: 100px; 
+    height:50px; 
+    }
+
+    .train
+    {
+    width: 100px; 
+    height:50px; 
+    }
+
+    .bus
+    {
+    width: 100px; 
+    height:50px; 
+    }
+
     
     
 }
