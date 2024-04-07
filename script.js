@@ -11,7 +11,7 @@ function createSecondPage()
 {
     const secondPageDiv = document.createElement('div');
     secondPageDiv.classList.add('secondPageDiv');
-    secondPageDiv.textContent="Choose Your Mode of Transportation";
+    secondPageDiv.innerHTML= " <h5> Choose Your Mode of Transportation </h5>";
 
     const carImg = document.createElement('img');
     carImg.classList.add('carImg');
