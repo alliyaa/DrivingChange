@@ -21,7 +21,8 @@ grid-template-areas:
 
 .secondPageDiv
 {
-grid-template-columns: repeat(4, 9fr); /* Adjusted */
+display: grid;
+grid-template-columns: repeat(4, 9fr); 
 grid-template-rows: 1fr 10fr 10fr 10fr min-content;
 grid-template-areas:
   ' text text text text '
@@ -34,19 +35,47 @@ grid-template-areas:
 .car
 {
     grid-area: carbtn;
+    margin-top: 5.5rem;
 }
 
 .bus
 {
     grid-area: busbtn;
+    margin-top: 4.9rem;
 }
 
 .train
 {
     grid-area: trainbtn;
+    margin-top:5.7rem;
 }
 
+.carImg
+{
+    grid-area: carimg;
+    margin-top: 4rem;
+    max-width: 22rem;
+    max-height: 14rem;
+   
+   
+}
 
+.busImg
+{
+    grid-area: busimg;
+    margin-top: 2rem;
+    max-width: 21.5rem;
+    max-height: 13.5rem;
+}
+
+.trainImg
+{
+    grid-area: trainimg;
+    margin-top: 3rem;
+    max-width: 23rem;
+    max-height: 15rem;
+
+}
 
 h1
 {
