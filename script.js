@@ -79,6 +79,12 @@ function TripTime(viechle)
    editTime.textContent="14 mins";
    document.body.appendChild(editTime);
 
+   editTime.addEventListener('input', function() {
+    const editedContent = editTime.textContent;
+    const sanitizedContent = editedContent.replace(/\D/g, ''); 
+    editTime.textContent = sanitizedContent;
+});
+
    const calculateButton = document.createElement('button');
    calculateButton.textContent = "Calculate";
    document.body.appendChild(calculateButton);
