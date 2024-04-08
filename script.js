@@ -80,8 +80,16 @@ function TripTime(viechle)
    document.body.appendChild(editTime);
 
    const calculateButton = document.createElement('button');
-   calculateButton.textContent = "Calculate your Carbon Emissions";
+   calculateButton.textContent = "Calculate";
    document.body.appendChild(calculateButton);
+
+   
+    calculateButton.addEventListener('click', function() {
+    const editedTime = editTime.textContent;
+    console.log("Edited time:", editedTime);
+    new CarbonEmission(editedTime,viechle);
+});
+
 }
 
 
@@ -92,6 +100,7 @@ function TripTime(viechle)
         this.time=time;
         this.viechle=viechle;
     }
+
  }
 
 
