@@ -18,6 +18,14 @@ function createSecondPage()
     carImg.src = 'Car.png';
     secondPageDiv.appendChild(carImg);
     const carButton = document.createElement('button');
+
+    carButton.addEventListener('click', () =>
+    {
+        document.body.innerHTML= '';
+        TripTime();
+   
+    });
+
     carButton.textContent = 'Car';
     secondPageDiv.appendChild(carButton);
     carButton.classList.add('car');
@@ -27,6 +35,14 @@ function createSecondPage()
     busImg.src = 'bus.png';
     secondPageDiv.appendChild(busImg);
     const busButton = document.createElement('button');
+
+    busButton.addEventListener('click',  () =>
+   {
+    
+    document.body.innerHTML= '';
+    TripTime();
+   });
+
     busButton.textContent = 'Bus';
     secondPageDiv.appendChild(busButton);
     busButton.classList.add('bus');
@@ -36,6 +52,14 @@ function createSecondPage()
     trainImg.src = 'Train.png';
     secondPageDiv.appendChild(trainImg);
     const trainButton = document.createElement('button');
+
+    trainButton.addEventListener('click', () =>
+    {
+        document.body.innerHTML= '';
+        TripTime();
+   
+    });
+
     trainButton.textContent = 'Train';
     secondPageDiv.appendChild(trainButton);
     trainButton.classList.add('train');
@@ -43,3 +67,14 @@ function createSecondPage()
     document.body.appendChild(secondPageDiv); 
 
 }
+
+ function TripTime()
+ {
+    const tripTime = document.createElement('div');
+    tripTime.textContent = 'Enter your trip time in minutes';
+    document.body.appendChild(tripTime);
+ }
+
+ 
+
+ 
