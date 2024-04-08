@@ -22,7 +22,7 @@ function createSecondPage()
     carButton.addEventListener('click', () =>
     {
         document.body.innerHTML= '';
-        TripTime();
+        TripTime('car');
    
     });
 
@@ -40,7 +40,7 @@ function createSecondPage()
    {
     
     document.body.innerHTML= '';
-    TripTime();
+    TripTime('bus');
    });
 
     busButton.textContent = 'Bus';
@@ -56,7 +56,7 @@ function createSecondPage()
     trainButton.addEventListener('click', () =>
     {
         document.body.innerHTML= '';
-        TripTime();
+        TripTime('train');
    
     });
 
@@ -68,12 +68,32 @@ function createSecondPage()
 
 }
 
- function TripTime()
+function TripTime(viechle)
+{
+   const tripTime = document.createElement('div');
+   tripTime.textContent = 'Enter your trip time in minutes';
+   document.body.appendChild(tripTime);
+
+   const editTime = document.createElement('div');
+   editTime.contentEditable = true;
+   editTime.textContent="14 mins";
+   document.body.appendChild(editTime);
+
+   const calculateButton = document.createElement('button');
+   calculateButton.textContent = "Calculate your Carbon Emissions";
+   document.body.appendChild(calculateButton);
+}
+
+
+ class CarbonEmission
  {
-    const tripTime = document.createElement('div');
-    tripTime.textContent = 'Enter your trip time in minutes';
-    document.body.appendChild(tripTime);
+    constructor(time,viechle)
+    {
+        this.time=time;
+        this.viechle=viechle;
+    }
  }
+
 
  
 
