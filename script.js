@@ -95,15 +95,19 @@ function TripTime(viechle)
     if(viechle==='car')
     {
 
-      carCarbonEmission();
+      carCarbonEmission(editedTime, viechle);
 
     }
 
     else if (viechle==='bus')
     {
        
-          carCarbonEmission();
-    
+          busCarbonEmission(editedTime, viechle);
+    }
+
+    else
+    {
+        trainCarbonEmission(editedTime, viechle);
     }
     
 });
@@ -142,7 +146,7 @@ function TripTime(viechle)
 }
 
 
-function carCarbonEmission()
+function carCarbonEmission(editedTime, viechle)
 {
     const emission = new CarbonEmission(editedTime, viechle);
     const carCarbonE = emission.carCarbon(); 
@@ -151,6 +155,15 @@ function carCarbonEmission()
     document.body.appendChild(carbonEDiv);
 }
 
+function busCarbonEmission(editedTime, viechle)
+{
+    const emission = new CarbonEmission(editedTime, viechle);
+    const busCarbonE = emission.carCarbon(); 
+    const carbonEDiv = document.createElement('div');
+    carbonEDiv.textContent = busCarbonE; 
+    document.body.appendChild(carbonEDiv);
+
+}
 
  
 
