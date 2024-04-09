@@ -124,55 +124,87 @@ function TripTime(viechle)
     }
     
     carCarbon() {
-        if (this.viechle === 'car') { 
             const carCarbonE = this.time * 133; 
             return carCarbonE;
         }
-    }
+    
 
-    busCarbon() {
-        if (this.viechle === 'bus') { 
+    busCarbon() 
+        {
             const carCarbonE = this.time * 20; 
             return carCarbonE;
         }
-    }
+    
 
-    trainCarbon() {
-        if (this.viechle === 'train') { 
+    trainCarbon() 
+        {
             const carCarbonE = this.time * 10; 
             return carCarbonE;
         }
-    }
+    
 }
 
 
 function carCarbonEmission(editedTime, viechle)
 {
+    document.body.textContent='';
     const emission = new CarbonEmission(editedTime, viechle);
-    const carCarbonE = emission.carCarbon(); 
+    const carCarbonC = emission.carCarbon(); 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent= carCarbonE; 
+    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent+= carCarbonC; 
+
+    carbonEDiv.textContent+= "For the same trip, bus emits";
+    const carCarbonB = emission.busCarbon(); 
+    carbonEDiv.textContent+= carCarbonB; 
+
+    carbonEDiv.textContent+= "For the same trip, train emits";
+    const carCarbonT = emission.trainCarbon(); 
+    carbonEDiv.textContent+= carCarbonT;
+
     document.body.appendChild(carbonEDiv);
 }
 
 function busCarbonEmission(editedTime, viechle)
 {
+    document.body.textContent='';
     const emission = new CarbonEmission(editedTime, viechle);
     const busCarbonE = emission.busCarbon(); 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent = '';
-    carbonEDiv.textContent = busCarbonE; 
+    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent+= busCarbonE; 
+
+    carbonEDiv.textContent+= "For the same trip, car emits";
+    const carCarbonC = emission.carCarbon(); 
+    carbonEDiv.textContent+= carCarbonC; 
+
+    carbonEDiv.textContent+= "For the same trip, train emits";
+    const carCarbonT = emission.trainCarbon(); 
+    carbonEDiv.textContent+= carCarbonT;
+
     document.body.appendChild(carbonEDiv);
 
 }
 
 function trainCarbonEmission(editedTime, viechle)
 {
+    document.body.textContent='';
     const emission = new CarbonEmission(editedTime, viechle);
-    const trainCarbonE = emission.trainCarbon(); 
+    const trainCarbonE = emission.trainCarbon();
+
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent = '';
-    carbonEDiv.textContent = trainCarbonE; 
+    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent += trainCarbonE; 
+
+    carbonEDiv.textContent+= "For the same trip, car emits";
+    const carCarbonC = emission.carCarbon(); 
+    carbonEDiv.textContent+= carCarbonC; 
+
+    carbonEDiv.textContent+= "For the same trip, bus emits";
+    const carCarbonB = emission.busCarbon(); 
+    carbonEDiv.textContent+= carCarbonB; 
+
+
     document.body.appendChild(carbonEDiv);
 
 }
