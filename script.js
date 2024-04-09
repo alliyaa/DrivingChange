@@ -79,13 +79,10 @@ function TripTime(viechle)
    editTime.textContent="14 mins";
    document.body.appendChild(editTime);
 
-
-
    const calculateButton = document.createElement('button');
    calculateButton.textContent = "Calculate";
    document.body.appendChild(calculateButton);
 
-   
     calculateButton.addEventListener('click', function() {
 
     const editedContent = editTime.textContent;
@@ -95,9 +92,19 @@ function TripTime(viechle)
 
     const editedTime = editTime.textContent;
 
-     const emission = new CarbonEmission(editedTime, viechle);
-     const carCarbonE = emission.carCarbon(); 
-     console.log(carCarbonE);
+    if(viechle==='car')
+    {
+
+      carCarbonEmission();
+
+    }
+
+    else if (viechle==='bus')
+    {
+       
+          carCarbonEmission();
+    
+    }
     
 });
 
@@ -118,8 +125,31 @@ function TripTime(viechle)
             return carCarbonE;
         }
     }
+
+    busCarbon() {
+        if (this.viechle === 'bus') { 
+            const carCarbonE = this.time * 20; 
+            return carCarbonE;
+        }
+    }
+
+    trainCarbon() {
+        if (this.viechle === 'bus') { 
+            const carCarbonE = this.time * 10; 
+            return carCarbonE;
+        }
+    }
 }
 
+
+function carCarbonEmission()
+{
+    const emission = new CarbonEmission(editedTime, viechle);
+    const carCarbonE = emission.carCarbon(); 
+    const carbonEDiv = document.createElement('div');
+    carbonEDiv.textContent = carCarbonE; 
+    document.body.appendChild(carbonEDiv);
+}
 
 
  
