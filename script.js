@@ -138,7 +138,7 @@ function TripTime(viechle)
     }
 
     trainCarbon() {
-        if (this.viechle === 'bus') { 
+        if (this.viechle === 'train') { 
             const carCarbonE = this.time * 10; 
             return carCarbonE;
         }
@@ -151,20 +151,31 @@ function carCarbonEmission(editedTime, viechle)
     const emission = new CarbonEmission(editedTime, viechle);
     const carCarbonE = emission.carCarbon(); 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent = carCarbonE; 
+    carbonEDiv.textContent= carCarbonE; 
     document.body.appendChild(carbonEDiv);
 }
 
 function busCarbonEmission(editedTime, viechle)
 {
     const emission = new CarbonEmission(editedTime, viechle);
-    const busCarbonE = emission.carCarbon(); 
+    const busCarbonE = emission.busCarbon(); 
     const carbonEDiv = document.createElement('div');
+    carbonEDiv.textContent = '';
     carbonEDiv.textContent = busCarbonE; 
     document.body.appendChild(carbonEDiv);
 
 }
 
+function trainCarbonEmission(editedTime, viechle)
+{
+    const emission = new CarbonEmission(editedTime, viechle);
+    const trainCarbonE = emission.trainCarbon(); 
+    const carbonEDiv = document.createElement('div');
+    carbonEDiv.textContent = '';
+    carbonEDiv.textContent = trainCarbonE; 
+    document.body.appendChild(carbonEDiv);
+
+}
  
 
  
