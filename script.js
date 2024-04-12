@@ -71,17 +71,19 @@ function createSecondPage()
 function TripTime(viechle)
 {
    const tripTime = document.createElement('div');
-   tripTime.textContent = 'Enter your trip time in minutes';
-   document.body.appendChild(tripTime);
+   tripTime.classList.add('thirdPage');
+   tripTime.textContent= " Enter your Trip Time in Minutes ";
+
 
    const editTime = document.createElement('div');
+   editTime.classList.add('editableBox');;
    editTime.contentEditable = true;
-   editTime.textContent="14 mins";
-   document.body.appendChild(editTime);
+   editTime.textContent=" ";
+   tripTime.appendChild(editTime);
 
    const calculateButton = document.createElement('button');
    calculateButton.textContent = "Calculate";
-   document.body.appendChild(calculateButton);
+   tripTime.appendChild(calculateButton);
 
     calculateButton.addEventListener('click', function() {
 
@@ -89,6 +91,14 @@ function TripTime(viechle)
     const numericContent = editedContent.replace(/\D/g, ''); 
     editTime.textContent = numericContent;
     console.log(editTime.textContent);
+
+    editTime.addEventListener('input', function() {
+        const maxLength = 5; // Adjust the maximum length as needed
+        if (this.textContent.length > maxLength) {
+            this.textContent = this.textContent.slice(0, maxLength);
+        }
+    });
+
 
     const editedTime = editTime.textContent;
 
@@ -110,7 +120,11 @@ function TripTime(viechle)
         trainCarbonEmission(editedTime, viechle);
     }
     
+
 });
+
+
+document.body.appendChild(tripTime);
 
 }
 

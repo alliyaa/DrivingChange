@@ -1,7 +1,9 @@
 *
 {
-    background-color:  #B5DBA5;
+    background-color: #B5DBA5;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+  
 }
 
 .homepage
@@ -118,6 +120,33 @@ img
  
 }
 
+
+.thirdPage
+{
+    margin-top: 5rem;
+    font-size: 3rem;
+    color:#2A4C09;
+}
+
+
+  .editableBox {
+
+    outline: 0px solid transparent; 
+    font-size: 1.3rem;
+    width: 7rem;
+    height: 3rem;
+    margin-top: 5rem;
+    margin-left: 44rem;
+    margin-bottom: 5rem;
+    border-radius: 4px;
+    max-height: 1.5em; 
+    overflow: hidden;
+    white-space: nowrap;
+    border:2px solid black;
+   
+}
+
+
 @media only screen and (max-width: 600px) {
     .homepage {
         grid-template-columns: 1fr;
@@ -163,8 +192,7 @@ img
     margin-top: 3rem; 
     }
 
-    
-    
+ 
 }
 
 
