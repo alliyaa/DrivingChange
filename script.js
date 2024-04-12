@@ -90,14 +90,7 @@ function TripTime(viechle)
     const editedContent = editTime.textContent;
     const numericContent = editedContent.replace(/\D/g, ''); 
     editTime.textContent = numericContent;
-    console.log(editTime.textContent);
 
-    editTime.addEventListener('input', function() {
-        const maxLength = 5; // Adjust the maximum length as needed
-        if (this.textContent.length > maxLength) {
-            this.textContent = this.textContent.slice(0, maxLength);
-        }
-    });
 
 
     const editedTime = editTime.textContent;
