@@ -164,7 +164,7 @@ function carCarbonEmission(editedTime, viechle)
 
 
     document.body.appendChild(carbonEDiv);
-    TreesPerEmission(carCarbonC,viechle);
+
    
     const carbonODiv = document.createElement('div');
     
@@ -192,6 +192,8 @@ function carCarbonEmission(editedTime, viechle)
     document.body.appendChild(carbonHDiv);
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonTDiv);
+
+    TreesPerEmission(carCarbonC,viechle);
    
 
 }
@@ -208,7 +210,7 @@ function busCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent+= " grams of Co2"; 
 
     document.body.appendChild(carbonEDiv);
-    TreesPerEmission(busCarbonE,viechle);
+   
    
     const carbonODiv = document.createElement('div');
 
@@ -238,7 +240,7 @@ function busCarbonEmission(editedTime, viechle)
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonTDiv);
 
-
+    TreesPerEmission(busCarbonE,viechle);
 
 }
 
@@ -255,7 +257,7 @@ function trainCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent+= " grams of Co2"; 
     
     document.body.appendChild(carbonEDiv);
-    TreesPerEmission(trainCarbonE,viechle);
+   
    
     const carbonODiv = document.createElement('div');
 
@@ -284,34 +286,33 @@ function trainCarbonEmission(editedTime, viechle)
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonBDiv);
   
-
+    TreesPerEmission(trainCarbonE,viechle);
 
 }
 
+
+
 function TreesPerEmission(emission, viechle) {
     const TreeDiv = document.createElement('div');
-    TreeDiv.textContent += "With your " + viechle + " the carbon emissions are equivalent to ";
+    TreeDiv.textContent += "With the " + viechle + " as your mode of transportation, the carbon emissions are equivalent to ";
     const Trees = (12 * (((emission * 30) / 1000) / 21.77)).toFixed(2);
-    TreeDiv.textContent += Trees;
-    TreeDiv.textContent += " trees per year";
+    TreeDiv.textContent += Trees + " trees per year";
 
     TreeDiv.classList.add('carbon');
-
-    const treepicdiv = document.createElement('div');
-
-   
-    for (let i = 0; i < 5; i++) {
+ 
+    
+    const Treepic = document.createElement('div');
+    const numTrees = Math.ceil(Trees); 
+    for (let i = 0; i < numTrees; i++) {
         const treeImg = document.createElement('img');
         treeImg.src = 'Trees.png'; 
         treeImg.alt = 'Tree';
         treeImg.classList.add('tree');
-        treepicdiv.appendChild(treeImg);
+        Treepic.appendChild(treeImg);
     }
 
-  
     document.body.appendChild(TreeDiv);
-    document.body.appendChild(treepicdiv);
+    document.body.appendChild(Treepic);
 }
- 
 
  
