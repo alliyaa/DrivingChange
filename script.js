@@ -289,21 +289,29 @@ function trainCarbonEmission(editedTime, viechle)
 
 }
 
-function TreesPerEmission(emission,viechle)
-{
-     
+function TreesPerEmission(emission, viechle) {
     const TreeDiv = document.createElement('div');
-    TreeDiv.textContent+= "With your " + viechle + " the carbon emisssions are equivalent to ";
-    const Trees =  (12*(((emission * 30) / 1000) / 21.77)).toFixed(2)
+    TreeDiv.textContent += "With your " + viechle + " the carbon emissions are equivalent to ";
+    const Trees = (12 * (((emission * 30) / 1000) / 21.77)).toFixed(2);
     TreeDiv.textContent += Trees;
-    TreeDiv.textContent+= " trees per year";
-
-    
+    TreeDiv.textContent += " trees per year";
 
     TreeDiv.classList.add('carbon');
 
+    const treepicdiv = document.createElement('div');
+
+   
+    for (let i = 0; i < 5; i++) {
+        const treeImg = document.createElement('img');
+        treeImg.src = 'Trees.png'; 
+        treeImg.alt = 'Tree';
+        treeImg.classList.add('tree');
+        treepicdiv.appendChild(treeImg);
+    }
+
+  
     document.body.appendChild(TreeDiv);
-    
+    document.body.appendChild(treepicdiv);
 }
  
 
