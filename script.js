@@ -168,6 +168,9 @@ function carCarbonEmission(editedTime, viechle)
    
     const carbonODiv = document.createElement('div');
     
+    const carbonHDiv = document.createElement('div');
+    carbonHDiv.textContent+="With Other Modes of Transportation:";
+
     carbonODiv.textContent+= "For the same trip, a bus emits ";
     const carCarbonB = emission.busCarbon(); 
     carbonODiv.textContent+= carCarbonB; 
@@ -183,10 +186,13 @@ function carCarbonEmission(editedTime, viechle)
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
-    carbonTDiv.classList.add('carbon')
+    carbonHDiv.classList.add('carbono');
+    carbonTDiv.classList.add('carbon');
 
+    document.body.appendChild(carbonHDiv);
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonTDiv);
+   
 
 
 }
@@ -207,6 +213,9 @@ function busCarbonEmission(editedTime, viechle)
    
     const carbonODiv = document.createElement('div');
 
+    const carbonHDiv = document.createElement('div');
+    carbonHDiv.textContent+="With Other Modes of Transportation:";
+
     carbonODiv.textContent+= "For the same trip, a car emits ";
     const carCarbonC = emission.carCarbon(); 
     carbonODiv.textContent+= carCarbonC; 
@@ -220,6 +229,13 @@ function busCarbonEmission(editedTime, viechle)
     carbonTDiv.textContent+= carCarbonT;
     carbonTDiv.textContent+= " grams of Co2";
 
+
+    carbonEDiv.classList.add('carbon');
+    carbonODiv.classList.add('carbon');
+    carbonHDiv.classList.add('carbono');
+    carbonTDiv.classList.add('carbon');
+
+    document.body.appendChild(carbonHDiv);
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonTDiv);
 
@@ -243,6 +259,11 @@ function trainCarbonEmission(editedTime, viechle)
     TreesPerEmission(trainCarbonE,viechle);
    
     const carbonODiv = document.createElement('div');
+
+    
+    const carbonHDiv = document.createElement('div');
+    carbonHDiv.textContent+="With Other Modes of Transportation:";
+
     carbonODiv.textContent+= "For the same trip, a car emits ";
     const carCarbonC = emission.carCarbon(); 
     carbonODiv.textContent+= carCarbonC; 
@@ -255,6 +276,12 @@ function trainCarbonEmission(editedTime, viechle)
     carbonBDiv.textContent+= " grams of Co2"; 
    
 
+    carbonEDiv.classList.add('carbon');
+    carbonODiv.classList.add('carbon');
+    carbonHDiv.classList.add('carbono');
+    carbonBDiv.classList.add('carbon');
+
+    document.body.appendChild(carbonHDiv);
     document.body.appendChild(carbonODiv);
     document.body.appendChild(carbonBDiv);
   
@@ -270,6 +297,11 @@ function TreesPerEmission(emission,viechle)
     const Trees =  (12*(((emission * 30) / 1000) / 21.77)).toFixed(2)
     TreeDiv.textContent += Trees;
     TreeDiv.textContent+= " trees per year";
+
+    
+
+    TreeDiv.classList.add('carbon');
+
     document.body.appendChild(TreeDiv);
     
 }
