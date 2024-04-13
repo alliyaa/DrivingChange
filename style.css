@@ -227,20 +227,20 @@ img
     }
 
     .carbon {
-        margin-top: 1rem;
+        margin-top: 3rem;
         font-size: 1.5rem;
         line-height: 3rem;
     }
 
     .carbono {
-        margin-top: 2rem;
+        margin-top: 4rem;
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
 
     .tree {
         margin-top: 0.5rem;
-        width: 2.5rem;
+        width: 3rem;
     }
  
 }
