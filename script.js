@@ -158,7 +158,7 @@ function carCarbonEmission(editedTime, viechle)
     const emission = new CarbonEmission(editedTime, viechle);
     const carCarbonC = emission.carCarbon(); 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent+= "With the car, the carbon emission is: ";
     carbonEDiv.textContent+= carCarbonC; 
     carbonEDiv.textContent+= " grams of Co2"; 
 
@@ -194,7 +194,6 @@ function carCarbonEmission(editedTime, viechle)
     document.body.appendChild(carbonTDiv);
    
 
-
 }
 
 function busCarbonEmission(editedTime, viechle)
@@ -204,7 +203,7 @@ function busCarbonEmission(editedTime, viechle)
     const busCarbonE = emission.busCarbon(); 
 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent+= "With the Bus, the carbon emission is: ";
     carbonEDiv.textContent+= busCarbonE; 
     carbonEDiv.textContent+= " grams of Co2"; 
 
@@ -251,7 +250,7 @@ function trainCarbonEmission(editedTime, viechle)
 
 
     const carbonEDiv = document.createElement('div');
-    carbonEDiv.textContent+= "Your carbon Emission is: ";
+    carbonEDiv.textContent+= "With the train, the carbon emission is: ";
     carbonEDiv.textContent += trainCarbonE; 
     carbonEDiv.textContent+= " grams of Co2"; 
     
