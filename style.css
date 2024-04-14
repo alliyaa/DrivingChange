@@ -25,6 +25,14 @@ grid-template-areas:
   '. . . . button button .';
 }
 
+.homepage > h1{
+    background-color: azure;
+}
+
+.homepg{
+    background-color: azure;
+}
+
 li, a, button{
     font-weight: 500;
     font-size: 1.28rem;
@@ -51,12 +59,12 @@ header{
 }
 
 .navitems li {
-    /* Remove display: flex; */
-    margin-right: 10rem; /* Add margin between list items */
+    
+    margin-right: 10rem; 
 }
 
 .navitems li:last-child {
-    margin-right: 0; /* Remove margin from the last list item */
+    margin-right: 0; 
 }
 
 .navitems li a {
