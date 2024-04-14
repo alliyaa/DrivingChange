@@ -222,7 +222,8 @@ button
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: auto min-content auto;
         grid-template-areas:
-            'logo header .'
+            'logo . .'
+            '. header .'
             '. main .'
             '. button .';
     }
