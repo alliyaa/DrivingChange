@@ -222,10 +222,9 @@ button
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas:
-            'logo'
-            'header'
-            'main'
-            'button';
+            'logo header'
+            'main .'
+            'button .';
     }
 
     .navitems {
@@ -252,7 +251,7 @@ button
 
     .secondPageDiv > h5
     {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     }
     
     .car
