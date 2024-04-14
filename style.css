@@ -25,13 +25,7 @@ grid-template-areas:
   '. . . . button button .';
 }
 
-.homepage > h1{
-    background-color: azure;
-}
 
-#homepg{
-    background-color: azure;
-}
 
 li, a, button{
     font-weight: 500;
@@ -229,7 +223,7 @@ button
 @media only screen and (max-width: 600px) {
     .homepage {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr min-content ;
+        grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr min-content ;
         grid-template-areas:
             'logo . . '
             '.  header . '
