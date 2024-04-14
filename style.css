@@ -224,8 +224,8 @@ button
         grid-template-areas:
             'logo . . .'
             '. header . .'
-            '.  main . .'
-            '.  button . .';
+            '. main . .'
+            '. button . .';
     }
 
     .navitems {
@@ -242,10 +242,9 @@ button
     }
 
     img {
-        max-width: 10rem;
+        max-width: 8rem;
         max-height: 2rem;
-       
-       
+          
     }
 
     header {
