@@ -221,7 +221,7 @@ button
 @media only screen and (max-width: 600px) {
     .homepage {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr 0.2fr 1fr 1fr min-content ;
+        grid-template-rows: 0.2fr 0.2fr 1fr 0.5fr min-content ;
         grid-template-areas:
             'logo . . '
             '.  header . '
