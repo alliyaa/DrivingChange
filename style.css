@@ -1,13 +1,13 @@
 *
 {
-    background-color: #B5DBA5;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     box-sizing: border-box;
     margin:0;
     padding:0;
-  
+   
 }
+
 
 .homepage
 {
@@ -23,6 +23,19 @@ grid-template-areas:
   'logo  . . . header header . '
   '. . . . main main .'
   '. . . . button button .';
+
+  background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); /* Smooth greenish gradient colors */
+  background-size: 600% 600%; /* Larger background size for smoother animation */
+  animation: gradientAnimation 50s ease infinite; /* Animation for gradient */
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 0%; /* Starting position */
+  }
+  100% {
+      background-position: 100% 100%; /* Ending position */
+  }
 }
 
 
@@ -79,6 +92,9 @@ grid-template-areas:
   '. . carimg . carbtn . .'
   '. . busimg . busbtn . .'
   '. . trainimg . trainbtn . .';
+  background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); 
+  background-size: 600% 600%; 
+  animation: gradientAnimation 50s ease infinite; 
   
 }
 
@@ -171,9 +187,23 @@ button
 
 .thirdPage
 {
-    margin-top: 5rem;
+    
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc);
+    background-size: 600% 600%; 
+    animation: gradientAnimation 50s ease infinite; 
+}
+
+.thirdPageH {
+    
     font-size: 3rem;
     color:#2A4C09;
+
 }
 
 
@@ -184,7 +214,6 @@ button
     width: 7rem;
     height: 3rem;
     margin-top: 5rem;
-    margin-left: 44rem;
     margin-bottom: 5rem;
     border-radius: 4px;
     max-height: 1.5em; 
@@ -192,6 +221,20 @@ button
     white-space: nowrap;
     border:2px solid black;
    
+}
+
+.fourthPage
+{   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); 
+    background-size: 600% 600%;
+    animation: gradientAnimation 50s ease infinite; 
+    background-attachment: fixed;
+
 }
 
 .carbon
@@ -222,8 +265,8 @@ button
 
 @media only screen and (max-width: 600px) {
     .homepage {
-        grid-template-columns: 0.1fr 1fr 1fr 1fr; /* Adjusted from 0.1 to 0.1fr */
-        grid-template-rows: 0.1fr 0.1fr 0.4fr 0.1fr min-content; /* Adjusted rows */
+        grid-template-columns: 0.1fr 1fr 1fr 1fr; 
+        grid-template-rows: 0.1fr 0.1fr 0.4fr 0.1fr min-content; 
         grid-template-areas:
             '. logo . .'
             '. . header .'

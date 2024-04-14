@@ -72,8 +72,11 @@ function TripTime(viechle)
 {
    const tripTime = document.createElement('div');
    tripTime.classList.add('thirdPage');
-   tripTime.textContent= " Enter your Trip Time in Minutes ";
 
+   const tripTimeQ = document.createElement('div');
+   tripTimeQ.classList.add('thirdPageH');
+   tripTimeQ.textContent= " Enter your Trip Time in Minutes ";
+   tripTime.appendChild(tripTimeQ);
 
    const editTime = document.createElement('div');
    editTime.classList.add('editableBox');;
@@ -119,6 +122,8 @@ function TripTime(viechle)
 
 document.body.appendChild(tripTime);
 
+
+
 }
 
 
@@ -162,8 +167,9 @@ function carCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent+= carCarbonC; 
     carbonEDiv.textContent+= " grams of Co2"; 
 
-
-    document.body.appendChild(carbonEDiv);
+    
+    const fourthPage = document.createElement('div');
+    fourthPage.appendChild(carbonEDiv);
 
    
     const carbonODiv = document.createElement('div');
@@ -183,17 +189,21 @@ function carCarbonEmission(editedTime, viechle)
     carbonTDiv.textContent+= carCarbonT;
     carbonTDiv.textContent+= " grams of Co2";
 
+    fourthPage.classList.add('fourthPage');
+    fourthPage.appendChild(carbonHDiv);
+    fourthPage.appendChild(carbonODiv);
+    fourthPage.appendChild(carbonTDiv);
+
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
     carbonHDiv.classList.add('carbono');
     carbonTDiv.classList.add('carbon');
 
-    document.body.appendChild(carbonHDiv);
-    document.body.appendChild(carbonODiv);
-    document.body.appendChild(carbonTDiv);
+    document.body.appendChild(fourthPage);
+  
 
-    TreesPerEmission(carCarbonC,viechle);
+    TreesPerEmission(carCarbonC,viechle,fourthPage);
    
 
 }
@@ -209,7 +219,8 @@ function busCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent+= busCarbonE; 
     carbonEDiv.textContent+= " grams of Co2"; 
 
-    document.body.appendChild(carbonEDiv);
+    const fourthPage = document.createElement('div');
+    fourthPage.appendChild(carbonEDiv);
    
    
     const carbonODiv = document.createElement('div');
@@ -230,17 +241,20 @@ function busCarbonEmission(editedTime, viechle)
     carbonTDiv.textContent+= carCarbonT;
     carbonTDiv.textContent+= " grams of Co2";
 
+    fourthPage.classList.add('fourthPage');
+    fourthPage.appendChild(carbonHDiv);
+    fourthPage.appendChild(carbonODiv);
+    fourthPage.appendChild(carbonTDiv);
+
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
     carbonHDiv.classList.add('carbono');
     carbonTDiv.classList.add('carbon');
 
-    document.body.appendChild(carbonHDiv);
-    document.body.appendChild(carbonODiv);
-    document.body.appendChild(carbonTDiv);
+    document.body.appendChild(fourthPage);
 
-    TreesPerEmission(busCarbonE,viechle);
+    TreesPerEmission(busCarbonE,viechle,fourthPage);
 
 }
 
@@ -256,7 +270,9 @@ function trainCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent += trainCarbonE; 
     carbonEDiv.textContent+= " grams of Co2"; 
     
-    document.body.appendChild(carbonEDiv);
+  
+    const fourthPage = document.createElement('div');
+    fourthPage.appendChild(carbonEDiv);
    
    
     const carbonODiv = document.createElement('div');
@@ -276,23 +292,25 @@ function trainCarbonEmission(editedTime, viechle)
     carbonBDiv.textContent+= carCarbonB; 
     carbonBDiv.textContent+= " grams of Co2"; 
    
+    fourthPage.classList.add('fourthPage');
+    fourthPage.appendChild(carbonHDiv);
+    fourthPage.appendChild(carbonODiv);
+    fourthPage.appendChild(carbonBDiv);
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
     carbonHDiv.classList.add('carbono');
     carbonBDiv.classList.add('carbon');
 
-    document.body.appendChild(carbonHDiv);
-    document.body.appendChild(carbonODiv);
-    document.body.appendChild(carbonBDiv);
+    document.body.appendChild(fourthPage);
   
-    TreesPerEmission(trainCarbonE,viechle);
+    TreesPerEmission(trainCarbonE,viechle,fourthPage);
 
 }
 
 
 
-function TreesPerEmission(emission, viechle) {
+function TreesPerEmission(emission, viechle,fourthPage) {
     const TreeDiv = document.createElement('div');
     TreeDiv.textContent += "With the " + viechle + " as your mode of transportation, the carbon emissions are equivalent to ";
     const Trees = (12 * (((emission * 30) / 1000) / 21.77)).toFixed(2);
@@ -311,8 +329,10 @@ function TreesPerEmission(emission, viechle) {
         Treepic.appendChild(treeImg);
     }
 
-    document.body.appendChild(TreeDiv);
-    document.body.appendChild(Treepic);
+    fourthPage.appendChild(TreeDiv);
+    fourthPage.appendChild(Treepic);
+
+    document.body.appendChild(fourthPage);
 }
 
  
