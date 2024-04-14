@@ -222,13 +222,13 @@ button
 
 @media only screen and (max-width: 600px) {
     .homepage {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr min-content ;
+        grid-template-columns: 0.1 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr min-content ;
         grid-template-areas:
-            'logo . . '
-            '.  header . '
-            '.  main . '
-            '.  button . ';
+            '. logo . . '
+            '. .  header . '
+            '. .  main . '
+            '. .  button . ';
     }
 
     .navitems {
