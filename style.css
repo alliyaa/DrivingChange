@@ -220,7 +220,7 @@ button
 @media only screen and (max-width: 600px) {
     .homepage {
         grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: auto min-content;
+        grid-template-rows: auto min-content auto;
         grid-template-areas:
             'logo header .'
             '. main .'
@@ -228,9 +228,18 @@ button
     }
 
     .navitems {
-        flex-direction: row;
         justify-content: center;
     }
+
+    button {
+        margin: 0 auto; /* Center the button horizontally */
+    }
+}
+
+    /* .navitems {
+        flex-direction: row;
+        justify-content: center;
+    } */
 
     .navitems li {
         margin-right: 1rem; 
