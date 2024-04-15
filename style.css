@@ -282,7 +282,6 @@ button
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: scroll;
     background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); 
     background-size: 600% 600%;
     animation: gradientAnimation 50s ease infinite; 
