@@ -25,7 +25,7 @@ grid-template-areas:
   '. . . . main main .'
   '. . . . button button .';
 
-  background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); /* Smooth greenish gradient colors */
+  background: radial-gradient(circle, #d3f1cc, #ccf0cd, #c1f5dd, #bcf1e1, #cdf4c5); /* Smooth greenish gradient colors */
   background-size: 600% 600%; /* Larger background size for smoother animation */
   animation: gradientAnimation 50s ease infinite; /* Animation for gradient */
 }
@@ -265,7 +265,7 @@ button
 .TreeQ
 {
     font-size: 2rem;
-    margin-top: 4rem;
+   margin-top: 4rem;
 
 }
 
@@ -275,30 +275,27 @@ button
     margin-bottom: 2rem;
 }
 
-.fifthPage
-{
+.fifthPage {
+  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
-    background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc); 
-    background-size: 600% 600%;
+    background: radial-gradient(circle, #d3f1cc, #94f797, #5dc695, #72f0ca, #d3f1cc);
+    background-size: 600% 600%; 
     animation: gradientAnimation 50s ease infinite; 
-    background-attachment: fixed;
-
+    background-attachment: scroll;
 
 }
 
 
 .tree {
     margin-top: 1rem;
-    width: 3.5rem;
+    width: 3rem;
     height: auto;
     margin-right: 5px; 
-    background-color: white;
-   
+ 
+  
 }
    
 .TreeBackg
@@ -306,11 +303,11 @@ button
     
     margin-top: 4rem;
     text-align: center;
-   
+    margin-bottom: 4rem;
     display: flex;
     flex-wrap: wrap; 
     max-width: 80vw;
-    background-color: white;
+    background-color: azure;
     padding-top: 3rem;
     padding-left: 2rem;
     padding-right: 1rem;
