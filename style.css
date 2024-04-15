@@ -312,6 +312,8 @@ button
     max-width: 80vw;
     background-color: white;
     padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
     padding-bottom: 3rem;
     border-radius: 1.2rem;
 }
@@ -396,7 +398,10 @@ button
         margin-top: 3rem;
         font-size: 1.5rem;
         line-height: 3rem;
+        padding: 1.5rem;
+        border-radius: 0.3rem;
     }
+
 
     .carbono {
         margin-top: 4rem;
