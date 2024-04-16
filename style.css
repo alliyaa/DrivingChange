@@ -172,6 +172,28 @@ grid-area:  main;
 
 }
 
+.awarenessPage
+{
+display: grid;
+place-items: center; 
+width: 100%;
+height: 100vh;
+background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
+background-size: 600% 600%; 
+animation: gradientAnimation 50s ease infinite; 
+
+}
+
+.awarenessText
+{
+    background-color: azure;
+    line-height:1.5rem;
+    color:#01796F;
+    padding: 3rem;
+    font-size: 1rem;
+    max-width: 80vw;
+    border-radius: 3rem;
+}
 
 button
 {
