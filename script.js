@@ -7,6 +7,25 @@ homeButton.addEventListener('click',  () =>
 
 });
 
+const homeLink = document.getElementById("homeLink");
+const awarenessLink = document.getElementById("awarenessLink");
+const refLink = document.getElementById("refLink");
+
+awarenessLink.addEventListener("click", function(event) {
+   
+    event.preventDefault();
+
+    document.body.textContent = "";
+});
+
+
+refLink.addEventListener("click", function(event) {
+   
+    event.preventDefault();
+
+    document.body.textContent = "";
+});
+
 function createSecondPage()
 {
     const secondPageDiv = document.createElement('div');
@@ -15,7 +34,7 @@ function createSecondPage()
 
     const carImg = document.createElement('img');
     carImg.classList.add('carImg');
-    carImg.src = 'Car.png';
+    carImg.src ='car.png';
     secondPageDiv.appendChild(carImg);
     const carButton = document.createElement('button');
 
@@ -49,7 +68,7 @@ function createSecondPage()
 
     const trainImg = document.createElement('img');
     trainImg.classList.add('trainImg');
-    trainImg.src = 'Train.png';
+    trainImg.src = 'train.png';
     secondPageDiv.appendChild(trainImg);
     const trainButton = document.createElement('button');
 
