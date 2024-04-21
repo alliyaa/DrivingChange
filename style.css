@@ -7,6 +7,7 @@
     padding:0;
     color:azure;
   
+  
    
    
 }
@@ -440,6 +441,22 @@ grid-template-areas:
             '. . button .';
     }
 
+    .secondPageDiv {
+        grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed for mobile layout */
+        grid-template-rows: auto; /* Allow rows to adjust automatically */
+        grid-template-areas:
+          'logo'
+          'header'
+          'text'
+          'carimg'
+          'carbtn'
+          'busimg'
+          'busbtn'
+          'trainimg'
+          'trainbtn';
+      }
+    }
+
     .navitems {
         justify-content: center;
     }
@@ -480,7 +497,7 @@ grid-template-areas:
     {
     width: 100px; 
     height:50px;
-    margin-top: 1.8rem; 
+    margin-top: 2rem; 
     }
 
     .carImg{
@@ -506,7 +523,7 @@ grid-template-areas:
     {
     width: 100px; 
     height:50px; 
-    margin-top: 2.5rem; 
+    margin-top: 2.9rem; 
     }
 
     .bus
