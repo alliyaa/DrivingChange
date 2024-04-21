@@ -160,7 +160,7 @@ grid-template-areas:
   
   background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
   background-size: 1000% 1000%; 
-  overflow: auto;
+
  animation: gradientAnimation 50s ease infinite; 
 
 }
