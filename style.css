@@ -431,9 +431,10 @@ grid-template-areas:
 @media only screen and (max-width: 600px) {
     .nav {
         grid-template-columns: 0.1fr 0.2fr 1fr 1fr ; 
-        grid-template-rows: 0.1fr 0.1fr 0.4fr 0.1fr min-content; 
+        grid-template-rows: 0.1fr 0.1fr 0.4fr 0.4fr 0.1fr min-content; 
         grid-template-areas:
-            '. .logo . .'
+            '. . logo . .'
+            '. . . . .'
             '. . header .'
             '. .  main .'
             '. . button .';
@@ -443,7 +444,7 @@ grid-template-areas:
 
     .secondPageDiv {
         grid-template-columns: repeat(2, 1fr); 
-        margin-top: 5rem;
+        margin-bottom: 5rem;
         grid-template-rows: auto; 
         grid-template-areas:
           'logo header'
@@ -457,6 +458,7 @@ grid-template-areas:
 
     .navitems {
         justify-content: center;
+        grid-area: header;
     }
 
     button {
@@ -473,6 +475,7 @@ grid-template-areas:
         margin-right: auto;
         max-width: 11rem;
         max-height: 5rem;
+        grid-area: logo;
           
     }
 
@@ -513,6 +516,7 @@ grid-template-areas:
     .trainImg{
         max-width: 20rem;
         max-height: 10rem;
+        margin-bottom: 5rem;
         
     }
 
@@ -522,6 +526,7 @@ grid-template-areas:
     width: 100px; 
     height:50px; 
     margin-top: 2rem; 
+    margin-bottom: 5rem;
     }
 
     .bus
