@@ -455,7 +455,7 @@ grid-template-areas:
           'trainimg'
           'trainbtn';
       }
-    }
+    
 
     .navitems {
         justify-content: center;
