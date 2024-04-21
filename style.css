@@ -119,6 +119,7 @@ header{
     list-style: none;
     display: flex; 
     justify-content: space-around; 
+  
 
 
 }
@@ -126,15 +127,18 @@ header{
 .navitems li {
     
     margin-right: 10rem; 
+    
 }
 
 .navitems li:last-child {
     margin-right: 0; 
+    
 }
 
 .navitems li a {
     transition: all 0.3s ease 0s;
     color:azure;
+    
 } 
 
 .navitems li a:hover{
@@ -157,12 +161,12 @@ grid-template-areas:
   
   background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
   background-size: 1000% 1000%; 
-  overflow: scroll;
+  overflow: auto;
  animation: gradientAnimation 50s ease infinite; 
 
 }
 
- 
+
 
 .secondPageDiv > h5
 {
@@ -478,6 +482,25 @@ grid-template-areas:
     height:50px;
     margin-top: 1.8rem; 
     }
+
+    .carImg{
+        max-width: 8rem;
+        max-height: 8rem;   
+
+    }
+
+    .busImg{
+        max-width: 16rem;
+        max-height: 9rem;
+        
+    }
+
+    .trainImg{
+        max-width: 20rem;
+        max-height: 10rem;
+        
+    }
+
 
     .train
     {

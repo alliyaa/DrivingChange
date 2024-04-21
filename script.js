@@ -36,7 +36,7 @@ const Page = document.createElement('div');
     
         const carImg = document.createElement('img');
         carImg.classList.add('carImg');
-        carImg.src ='car.png';
+        carImg.src ='Car.png';
         Page.appendChild(carImg);
     
         const carButton = document.createElement('button');
@@ -64,7 +64,7 @@ const Page = document.createElement('div');
     
         const trainImg = document.createElement('img');
         trainImg.classList.add('trainImg');
-        trainImg.src = 'train.png';
+        trainImg.src = 'Train.png';
         Page.appendChild(trainImg);
     
         const trainButton = document.createElement('button');
