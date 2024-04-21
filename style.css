@@ -439,7 +439,7 @@ grid-template-areas:
             '. . button .';
     }
 
-    
+
     .secondPageDiv {
         grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
         grid-template-rows: auto; /* Allow rows to adjust automatically */
@@ -450,7 +450,7 @@ grid-template-areas:
           'busimg busbtn'
           'trainimg trainbtn';
       }
-    }
+    
     
 
     .navitems {
