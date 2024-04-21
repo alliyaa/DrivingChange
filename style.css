@@ -17,7 +17,7 @@
     display: block;
     margin: 0 auto; /* Centers the image horizontally */
     z-index: 2; /* Ensure the car is above the bus */
-    animation: move 2s linear infinite alternate;
+    animation: move 2s linear infinite alternate; /* Unique animation for car */
 }
 
 .busImg {
@@ -25,7 +25,7 @@
     display: block;
     margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
     z-index: 1; /* Ensure the bus is below the car */
-    animation: move 2s linear infinite alternate;
+    animation: move 2s linear infinite alternate; /* Unique animation for bus */
 }
 
 .trainImg {
@@ -33,7 +33,7 @@
     display: block;
     margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
     z-index: 1; /* Ensure the bus is below the car */
-    animation: move 2s linear infinite alternate;
+    animation: move 2s linear infinite alternate; /* Unique animation for train */
 }
 
 @keyframes move {
@@ -44,8 +44,6 @@
         transform: translateX(0.5rem);
     }
 }
-
-
 
 
 
@@ -441,20 +439,18 @@ grid-template-areas:
             '. . button .';
     }
 
+    
     .secondPageDiv {
-        grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed for mobile layout */
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
         grid-template-rows: auto; /* Allow rows to adjust automatically */
         grid-template-areas:
-          'logo'
-          'header'
-          'text'
-          'carimg'
-          'carbtn'
-          'busimg'
-          'busbtn'
-          'trainimg'
-          'trainbtn';
+          'logo header'
+          'text text'
+          'carimg carbtn'
+          'busimg busbtn'
+          'trainimg trainbtn';
       }
+    }
     
 
     .navitems {
