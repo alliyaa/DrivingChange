@@ -1,13 +1,11 @@
 
-  
+const Page = document.createElement('div');
+
     createFirstPage();
     function createFirstPage() {
    
-       const FirstPage = document.createElement('div');
-
-        FirstPage.classList.add('homepage');
+        Page.classList.add('homepage');
       
-
         const Header = document.createElement('div');
         Header.innerHTML = "Find Out Your <br>  Carbon Footprint!";
         Header.classList.add('HeaderM');
@@ -16,30 +14,30 @@
         homeButton.textContent = "Learn More";
 
         homeButton.addEventListener('click', () => {
-         FirstPage.innerHTML = '';
-         FirstPage.textContent = '';
-            createSecondPage(FirstPage);
+         Page.innerHTML = '';
+         Page.textContent = '';
+            createSecondPage();
         });
 
-        FirstPage.appendChild(Header);
-        FirstPage.appendChild(homeButton);
-        document.body.appendChild(FirstPage);
+        Page.appendChild(Header);
+        Page.appendChild(homeButton);
+        document.body.appendChild(Page);
     }
 
 
     
 
-    function createSecondPage(sPage) {
+    function createSecondPage() {
        
-        sPage.classList.add('secondPageDiv');
+        Page.classList.add('secondPageDiv');
    
         
-        sPage.innerHTML = "<h5>Choose Your Mode of Transportation</h5>";
+        Page.innerHTML = "<h5>Choose Your Mode of Transportation</h5>";
     
         const carImg = document.createElement('img');
         carImg.classList.add('carImg');
         carImg.src ='car.png';
-        sPage.appendChild(carImg);
+        Page.appendChild(carImg);
     
         const carButton = document.createElement('button');
         carButton.addEventListener('click', () => {
@@ -47,13 +45,13 @@
             TripTime('car');
         });
         carButton.textContent = 'Car';
-        sPage.appendChild(carButton);
+        Page.appendChild(carButton);
         carButton.classList.add('car');
     
         const busImg = document.createElement('img');
         busImg.classList.add('busImg');
         busImg.src = 'bus.png';
-        sPage.appendChild(busImg);
+        Page.appendChild(busImg);
     
         const busButton = document.createElement('button');
         busButton.addEventListener('click', () => {
@@ -61,13 +59,13 @@
             TripTime('bus');
         });
         busButton.textContent = 'Bus';
-        sPage.appendChild(busButton);
+        Page.appendChild(busButton);
         busButton.classList.add('bus');
     
         const trainImg = document.createElement('img');
         trainImg.classList.add('trainImg');
         trainImg.src = 'train.png';
-        sPage.appendChild(trainImg);
+        Page.appendChild(trainImg);
     
         const trainButton = document.createElement('button');
         trainButton.addEventListener('click', () => {
@@ -75,21 +73,30 @@
             TripTime('train');
         });
         trainButton.textContent = 'Train';
-        sPage.appendChild(trainButton);
+        Page.appendChild(trainButton);
         trainButton.classList.add('train');
     
   
-        document.body.appendChild(sPage); // Append the created elements
+        document.body.appendChild(Page); 
     }
     
 
 
 
 const homeLink = document.getElementById("homeLink");
+
 homeLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    createFirstPage();
+     event.preventDefault();
+     Page.classList.remove('secondPageDiv');
+     Page.innerHTML = '';
+     Page.textContent = '';
+     createFirstPage();
+
+   
+  
+   
 });
+
 const refLink = document.getElementById("refLink");
 
 const awarenessLink = document.getElementById("awarenessLink");
@@ -118,6 +125,7 @@ awarenessLink.addEventListener("click", function(event) {
 
 
 refLink.addEventListener("click", function(event) {
+   
    
     event.preventDefault();
 
@@ -215,6 +223,9 @@ document.body.appendChild(tripTime);
 }
 
 
+    
+
+
 function carCarbonEmission(editedTime, viechle)
 {
     document.body.textContent='';
@@ -236,7 +247,26 @@ function carCarbonEmission(editedTime, viechle)
   
     fourthPage.appendChild(carbonEDiv);
 
+    const Tree = document.createElement('div');
+    Tree.classList.add('TreeQ');
+    Tree.textContent+= "How many trees need to be planted per year to offset your  net carbon emissions?";
+    fourthPage.appendChild(Tree);
+
+    // const TreeButton = document.createElement('button');
+    // TreeButton.classList.add('Treebtn');
+    // TreeButton.textContent += "See Trees";
+    // fourthPage.appendChild(TreeButton);
+
+    TreesPerEmission(carCarbonC,viechle,fourthPage);
+     
+    
+     const OthersButton = document.createElement('button');
+     OthersButton.classList.add('Treebtn');
+     OthersButton.textContent += "Compare Emissions";
+     fourthPage.appendChild(OthersButton);
    
+   OthersButton.addEventListener('click', () =>
+   {
     const carbonODiv = document.createElement('div');
     
     const carbonHDiv = document.createElement('div');
@@ -265,23 +295,15 @@ function carCarbonEmission(editedTime, viechle)
     carbonHDiv.classList.add('HeaderV');
     carbonTDiv.classList.add('carbon');
 
-    const Tree = document.createElement('div');
-    Tree.classList.add('TreeQ');
-    Tree.textContent+= "How many trees need to be planed per year to offset your  net carbon emissions?";
-    fourthPage.appendChild(Tree);
-
-    const TreeButton = document.createElement('button');
-    TreeButton.classList.add('Treebtn');
-    TreeButton.textContent += "See Trees";
-    fourthPage.appendChild(TreeButton);
+   });
     
     document.body.appendChild(fourthPage);
   
-    TreeButton.addEventListener('click', () => {
+    // TreeButton.addEventListener('click', () => {
        
-    TreesPerEmission(carCarbonC,viechle,fourthPage);
+    // TreesPerEmission(carCarbonC,viechle,fourthPage);
 
-    });
+    // });
    
 
 }
@@ -307,8 +329,16 @@ function busCarbonEmission(editedTime, viechle)
     
 
     fourthPage.appendChild(carbonEDiv);
-   
-   
+
+    TreesPerEmission(busCarbonE,viechle,fourthPage);
+
+    const OthersButton = document.createElement('button');
+    OthersButton.classList.add('Treebtn');
+    OthersButton.textContent += "Compare Emissions";
+    fourthPage.appendChild(OthersButton);
+    
+    OthersButton.addEventListener('click', () =>
+    {
     const carbonODiv = document.createElement('div');
 
     const carbonHDiv = document.createElement('div');
@@ -337,9 +367,11 @@ function busCarbonEmission(editedTime, viechle)
     carbonHDiv.classList.add('HeaderV');
     carbonTDiv.classList.add('carbon');
 
+    });
+      
     document.body.appendChild(fourthPage);
 
-    TreesPerEmission(busCarbonE,viechle,fourthPage);
+
 
 }
 
@@ -363,7 +395,16 @@ function trainCarbonEmission(editedTime, viechle)
     
   
     fourthPage.appendChild(carbonEDiv);
-   
+
+    TreesPerEmission(busCarbonE,viechle,fourthPage);
+    
+    const OthersButton = document.createElement('button');
+    OthersButton.classList.add('Treebtn');
+    OthersButton.textContent += "Compare Emissions";
+    fourthPage.appendChild(OthersButton);
+    
+    OthersButton.addEventListener('click', () =>
+    {
    
     const carbonODiv = document.createElement('div');
 
@@ -392,11 +433,11 @@ function trainCarbonEmission(editedTime, viechle)
     carbonHDiv.classList.add('HeaderV');
     carbonBDiv.classList.add('carbon');
 
+    });
+    
     document.body.appendChild(fourthPage);
 
    
-  
-    TreesPerEmission(trainCarbonE,viechle,fourthPage);
 
 }
 

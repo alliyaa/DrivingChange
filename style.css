@@ -11,6 +11,42 @@
    
 }
 
+.carImg {
+    position: relative;
+    display: block;
+    margin: 0 auto; /* Centers the image horizontally */
+    z-index: 2; /* Ensure the car is above the bus */
+    animation: move 2s linear infinite alternate;
+}
+
+.busImg {
+    position: relative;
+    display: block;
+    margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
+    z-index: 1; /* Ensure the bus is below the car */
+    animation: move 2s linear infinite alternate;
+}
+
+.trainImg {
+    position: relative;
+    display: block;
+    margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
+    z-index: 1; /* Ensure the bus is below the car */
+    animation: move 2s linear infinite alternate;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(-300px);
+    }
+    to {
+        transform: translateX(0.5rem);
+    }
+}
+
+
+
+
 
 .homepage
 {
@@ -108,7 +144,8 @@ header{
 .secondPageDiv
 {
 display: grid;
-
+min-height: 100vh;
+width: 100vw; 
 grid-template-columns: repeat(7,4fr);
 grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr  min-content;
 grid-template-areas:
@@ -119,10 +156,10 @@ grid-template-areas:
   '. . trainimg . trainbtn . .';
   
   background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
-  background-size: 600% 600%; 
-  animation: gradientAnimation 50s ease infinite; 
-background-attachment: scroll;
-  
+  background-size: 1000% 1000%; 
+  overflow: scroll;
+ animation: gradientAnimation 50s ease infinite; 
+
 }
 
  
@@ -143,6 +180,7 @@ background-attachment: scroll;
 .car
 {
     grid-area: carbtn;
+    margin-top: -3rem
 
    
 }
@@ -164,8 +202,8 @@ background-attachment: scroll;
 {
 
     grid-area: carimg;
-    max-width: 20rem;
-    max-height: 12rem;   
+    max-width: 10rem;
+    max-height: 10rem;   
    
 }
 
@@ -186,12 +224,11 @@ background-attachment: scroll;
 }
 
 
-
 .awarenessPage
 {
 display: grid;
-place-items: center; 
 
+place-items: center; 
 background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
 background-size: 600% 600%; 
 animation: gradientAnimation 50s ease infinite; 
@@ -291,6 +328,8 @@ button
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100vh;
     background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
     background-size: 600% 600%;
     animation: gradientAnimation 50s ease infinite; 
