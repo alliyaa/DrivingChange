@@ -516,9 +516,9 @@ grid-template-areas:
 
     header {
         padding: 10px; 
-        font-size: 0.5rem;
-      
+        font-size: 0.4rem;
     }
+
 
     h1{
         font-size: 2rem;
@@ -528,7 +528,8 @@ grid-template-areas:
     .secondPageDiv > h5
     {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
     }
     
     .car
