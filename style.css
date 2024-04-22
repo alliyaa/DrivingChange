@@ -243,7 +243,7 @@ grid-template-areas:
 background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
 background-size: 600% 600%; 
 animation: gradientAnimation 50s ease infinite; 
-overflow:auto;
+
 
 
 }
@@ -493,7 +493,7 @@ grid-template-areas:
 
     .navitems {
         justify-content: center;
-        grid-area: header;
+       
     }
 
     button {
@@ -510,13 +510,14 @@ grid-template-areas:
         margin-right: auto;
         max-width: 11rem;
         max-height: 5rem;
-        grid-area: logo;
+       
           
     }
 
     header {
         padding: 10px; 
         font-size: 0.5rem;
+      
     }
 
     h1{
