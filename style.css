@@ -501,7 +501,7 @@ grid-template-areas:
 
 
     .navitems li {
-        margin-right: 0.4rem; 
+        margin-right: 0.7rem; 
         font-size: 0.1rem;
     }
 
@@ -542,21 +542,21 @@ grid-template-areas:
     .carImg{
         max-width: 8rem;
         max-height: 8rem; 
-        animation: move 1s linear infinite alternate;  
+        animation: move 1.5s linear infinite alternate;  
 
     }
 
     .busImg{
         max-width: 16rem;
         max-height: 9rem;
-        animation: move 1s linear infinite alternate;  
+        animation: move 1.5s linear infinite alternate;  
         
     }
 
     .trainImg{
         max-width: 20rem;
         max-height: 10rem;
-        animation: move 1s linear infinite alternate;  
+        animation: move 1.5s linear infinite alternate;  
         
     }
 
