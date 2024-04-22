@@ -8,6 +8,7 @@
     color:azure;
   
   
+  
    
    
 }
@@ -160,7 +161,7 @@ grid-template-areas:
   
   background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
   background-size: 1000% 1000%; 
-
+  overflow:auto;
  animation: gradientAnimation 50s ease infinite; 
 
 }
@@ -229,27 +230,48 @@ grid-template-areas:
 
 .awarenessPage
 {
-display: grid;
+    display: grid;
+    min-height: 100vh;
+    width: 100vw; 
+    grid-template-columns: repeat(1,2fr) repeat(5,4fr) repeat(1,2fr);
+    grid-template-rows: 1fr 1fr 1fr min-content;
+    grid-template-areas:
+    'logo . .  .  . header . '
+      '. .  textA textA textA . . '
+      '. contentA contentA contentA contentA contentA . ';
 
-place-items: center; 
 background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
 background-size: 600% 600%; 
 animation: gradientAnimation 50s ease infinite; 
+overflow:auto;
+
 
 }
 
-.awarenessText
+.awarenessPage > h2
 {
-    background-color: azure;
+grid-area: textA;
+margin-top: 10rem;
+margin-bottom: 3rem;
+
+}
+
+.awarenessPage > h3
+{
+   grid-area: contentA;
     line-height:1.5rem;
     color:#01796F;
+    width: auto;
+    font-weight:500;
     padding: 3rem;
     font-size: 1rem;
-    max-width: 80vw;
     border-radius: 3rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
+    background-color: aliceblue;
+
 }
+
 
 button
 {
@@ -413,6 +435,7 @@ button
 }
 
 .nav{
+
 display: grid;
 place-items: center; 
 width: 100%;
@@ -453,8 +476,20 @@ grid-template-areas:
           'busimg busbtn'
           'trainimg trainbtn';
       }
+      
+      .awarenessPage
+    {
+    display: grid;
+    min-height: 100vh;
+    width: 100vw; 
+    grid-template-columns: repeat(1,2fr) repeat(2,4fr); 
+    grid-template-rows: 1fr 1fr 1fr min-content;
+    grid-template-areas:
+    'logo header'
+    'textA textA'
+      'contentA contentA';
     
-    
+    }
 
     .navitems {
         justify-content: center;
