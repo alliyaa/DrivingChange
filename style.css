@@ -7,9 +7,6 @@
     padding:0;
     color:azure;
   
-  
-  
-   
    
 }
 
@@ -483,12 +480,12 @@ grid-template-areas:
     display: grid;
     min-height: 100vh;
     width: 100vw; 
-    grid-template-columns: repeat(1,2fr) repeat(2,4fr); 
+    grid-template-columns: repeat(1,2fr) repeat(1,4fr) repeat(1,1fr);
     grid-template-rows: 1fr 1fr 1fr min-content;
     grid-template-areas:
-    'logo header'
-    'textA textA'
-      'contentA contentA';
+    'logo header .'
+    '. textA .'
+      '. contentA .';
     
     }
 
@@ -522,20 +519,21 @@ grid-template-areas:
     }
 
     h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-top: 2rem;
     }
 
     .secondPageDiv > h5
     {
     font-size: 1.3rem;
+    margin-bottom: 0.5rem;
     }
     
     .car
     {
     width: 100px; 
     height:50px;
-    margin-top: 1rem; 
+    margin-top: 0.7rem; 
     }
 
     .carImg{
