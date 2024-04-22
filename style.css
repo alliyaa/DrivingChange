@@ -480,17 +480,18 @@ grid-template-areas:
     display: grid;
     min-height: 100vh;
     width: 100vw; 
-    grid-template-columns: repeat(1,2fr) repeat(1,4fr) repeat(1,1fr);
+    grid-template-columns: repeat(1,1fr) repeat(3,4fr) repeat(1,1fr);
     grid-template-rows: 1fr 1fr 1fr min-content;
     grid-template-areas:
-    'logo header .'
-    '. textA .'
-      '. contentA .';
+    'logo header . . .'
+    '. . textA . .'
+      '. contentA contentA contentA .';
     
     }
 
     .navitems {
         justify-content: center;
+        font-size: 0.3rem;
        
     }
 
