@@ -528,7 +528,7 @@ grid-template-areas:
     .secondPageDiv > h5
     {
     font-size: 1.3rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     }
     
@@ -536,27 +536,27 @@ grid-template-areas:
     {
     width: 100px; 
     height:50px;
-    margin-top: 0.7rem; 
+    margin-top: 0.5rem; 
     }
 
     .carImg{
         max-width: 8rem;
         max-height: 8rem; 
-        animation: move 0.5s linear infinite alternate;  
+        animation: move 1s linear infinite alternate;  
 
     }
 
     .busImg{
         max-width: 16rem;
         max-height: 9rem;
-        animation: move 0.5s linear infinite alternate;  
+        animation: move 1s linear infinite alternate;  
         
     }
 
     .trainImg{
         max-width: 20rem;
         max-height: 10rem;
-        animation: move 0.5s linear infinite alternate;  
+        animation: move 1s linear infinite alternate;  
         
     }
 
