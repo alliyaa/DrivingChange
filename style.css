@@ -12,12 +12,50 @@
 }
 
 
+
+#animation-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+
+  
+
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateY(0);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('leaf.png'); 
+    background-size: cover;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+
 .carImg {
     position: relative;
     display: block;
     margin: 0 auto; /* Centers the image horizontally */
     z-index: 2; /* Ensure the car is above the bus */
-    animation: move 3s linear infinite;
+    animation: move 2s linear infinite; /* Unique animation for car */
 }
 
 .busImg {
@@ -25,7 +63,7 @@
     display: block;
     margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
     z-index: 1; /* Ensure the bus is below the car */
-    animation: move 3s linear infinite;
+    animation: move 2s linear infinite; /* Unique animation for bus */
 }
 
 .trainImg {
@@ -33,7 +71,7 @@
     display: block;
     margin: 3rem auto 0; /* Places the bus 3rem below the car and centers horizontally */
     z-index: 1; /* Ensure the bus is below the car */
-    animation: move 3s linear infinite;
+    animation: move 2s linear infinite; /* Unique animation for train */
 }
 
 @keyframes move {
@@ -53,7 +91,7 @@ display: grid;
 place-items: center; 
 width: 100%;
 height: 100vh;
-color:#2A4C09;
+color:black;
 grid-template-columns: repeat(3, 1fr) repeat(3, 1fr) repeat(1,0.2fr); 
 grid-template-rows:  2fr 2fr 10fr 10fr min-content;
 grid-template-areas:
@@ -61,10 +99,7 @@ grid-template-areas:
 'logo  . .  . . header . '
   '. .   main main . . .' 
   '. .  button button . . .';
-  background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
-  background-size: 600% 600%; 
-  animation: gradientAnimation 40s ease infinite; 
-  
+  background-color: rgb(207, 227, 238);
 
 }
 
@@ -76,6 +111,7 @@ grid-template-areas:
 text-align: center;
 font-size: 4rem;
 grid-area:  main;
+color:black;
 
 
 }
@@ -100,7 +136,7 @@ grid-area:  main;
 li, a, button{
     font-weight: 500;
     font-size: 1.28rem;
-    color:azure;
+    color:black;
     text-decoration: none; 
 }
 
@@ -136,7 +172,7 @@ header{
 
 .navitems li a {
     transition: all 0.3s ease 0s;
-    color:azure;
+    color:black;
     
 } 
 
@@ -509,7 +545,9 @@ button
 }
 
 
-
+.homepage > h1 {
+    color:black;
+}
 
 
 @media only screen and (max-width: 600px) {

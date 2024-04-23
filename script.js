@@ -3,6 +3,7 @@
 const Page = document.createElement('div');
 Page.classList.add('mainpage');
 
+
     createFirstPage();
     function createFirstPage() {
    
@@ -28,7 +29,36 @@ Page.classList.add('mainpage');
         document.body.appendChild(Page);
     }
 
-
+  
+    function createLeaf() {
+        const leaf = document.createElement('div');
+        leaf.classList.add('leaf');
+        leaf.style.left = `${Math.random() * window.innerWidth}px`;
+        document.getElementById('leaves-container').appendChild(leaf);
+        
+        // Randomize fall duration
+        const duration = Math.random() * 3 + 3; // Between 3 to 8 seconds
+        leaf.style.animation = `fall ${duration}s linear forwards`;
+        
+        // Remove leaf when it reaches bottom
+        setTimeout(() => {
+          leaf.remove();
+        }, duration * 1000);
+      }
+      
+      // Create multiple leaves
+      function createLeaves(numLeaves) {
+        for (let i = 0; i < numLeaves; i++) {
+          setTimeout(createLeaf, Math.random() * 3000); // Delay between leaf creation
+        }
+      }
+      
+      // Adjust the number of leaves based on screen size
+      const screenWidth = window.innerWidth;
+      const numLeaves = screenWidth > 1200 ? 30 : screenWidth > 600 ? 20 : 10;
+      
+      // Start creating leaves
+      createLeaves(numLeaves);
     
 
     function createSecondPage() {
@@ -441,41 +471,41 @@ function trainCarbonEmission(editedTime, viechle)
 
 }
 
-
-
-function TreesPerEmission(emission, viechle,fourthPage) {
-    
-    
-    fourthPage.textContent='';
+function TreesPerEmission(emission, vehicle, fourthPage) {
+    fourthPage.textContent = '';
     const fifthPage = document.createElement('div');
     fifthPage.classList.add('fifthPage');
 
     const TreeDiv = document.createElement('div');
-    TreeDiv.textContent += "With the " + viechle + " as your mode of transportation, the carbon emissions are equivalent to ";
+    TreeDiv.textContent += "With the " + vehicle + " as your mode of transportation, the carbon emissions are equivalent to ";
     const Trees = (12 * (((emission * 30) / 1000) / 21.77)).toFixed(2);
     TreeDiv.textContent += Trees + " trees per year";
     TreeDiv.classList.add('HeaderV');
- 
-    
+
     const Treepic = document.createElement('div');
     Treepic.classList.add('TreeBackg');
-       
- 
-    const numTrees = Math.ceil(Trees); 
-    for (let i = 0; i < numTrees; i++) {
-        const treeImg = document.createElement('img');
-        treeImg.src = 'Trees.png'; 
-        treeImg.alt = 'Tree';
-        treeImg.classList.add('tree');
-        Treepic.appendChild(treeImg);
-    }
+
+    const numTrees = Math.ceil(Trees);
+
+    let treeCounter = 0;
+    const interval = setInterval(function () {
+        if (treeCounter < numTrees) {
+            const treeImg = document.createElement('img');
+            treeImg.src = 'Trees.png';
+            treeImg.alt = 'Tree';
+            treeImg.classList.add('tree');
+            Treepic.appendChild(treeImg);
+            treeCounter++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 300); 
 
     fifthPage.appendChild(TreeDiv);
     fifthPage.appendChild(Treepic);
 
     document.body.appendChild(fifthPage);
 }
-
 
 const refLink = document.getElementById("refLink");
 
