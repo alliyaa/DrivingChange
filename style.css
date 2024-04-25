@@ -1,4 +1,4 @@
-*
+body
 {
     font-family:'Times New Roman', Times, serif;
     text-align: center;
@@ -6,19 +6,20 @@
     margin:0;
     padding:0;
     color:azure;
-   
-
+    background: radial-gradient(circle, #2d706c, #01796F, #028058, #00543c);
+    animation: gradientAnimation 40s ease infinite;
    
 }
+
 
 #tree1 {
 	display: block;
 	margin: auto;
 	object-fit: contain;
-	max-width: 60vw;
-	max-height: 60vh;
-    margin-top: 20rem;
-    margin-left: 1rem;
+	max-width: 50vw;
+	max-height: 50vh;
+
+    grid-area: tree1;
 
 }
 
@@ -27,45 +28,14 @@
 	display: block;
 	margin: auto;
 	object-fit: contain;
-	max-width: 60vw;
-	max-height: 60vh;
-    margin-top: 20rem;
-    margin-left: 20rem;
+	max-width: 50vw;
+	max-height: 50vh;
+ 
+    grid-area: tree2
 
 }
 
 
-
-
-
-  
-  @keyframes rotate {
-    0% {
-      transform: rotateY(0);
-    }
-    100% {
-      transform: rotateY(360deg);
-    }
-  }
-
-.leaf {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-image: url('leaf.png'); 
-    background-size: cover;
-  }
-  
-  @keyframes fall {
-    0% {
-      transform: translateY(-10%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(100vh);
-      opacity: 1;
-    }
-  }
 
 .carImg {
     position: relative;
@@ -101,26 +71,21 @@
 }
 
 
-
 .homepage
 {
 display: grid;
 place-items: center; 
 width: 100%;
 height: 100vh;
-color:black;
-grid-template-columns: repeat(3, 1fr) repeat(3, 1fr) repeat(1,0.2fr); 
-grid-template-rows:  2fr 2fr 10fr 10fr min-content;
+color:azure;
+grid-template-columns: repeat(7,1fr);
+grid-template-rows: 4fr 8fr 8fr min-content;
 grid-template-areas:
-'logo . .  .  . header .  '
-'logo  . .  . . header . '
-  '. .   main main . . .' 
-  '. .  button button . . .';
-  background-color: rgb(207, 227, 238);
-  background-image: radial-gradient(circle, #d2f8e3, #beffe6, #b3f8c5, #ecf6f3);
-  background-size: 600% 600%;
-  animation: gradientAnimation 40s ease infinite;
+' .  . . . . . .'
+  '. tree1 main main main  tree2 .' 
+  '. tree1 button button button  tree2 .';
 
+ 
 }
 
 
@@ -131,7 +96,7 @@ grid-template-areas:
 text-align: center;
 font-size: 4rem;
 grid-area:  main;
-color:black;
+
 
 
 }
@@ -156,7 +121,7 @@ color:black;
 li, a, button{
     font-weight: 500;
     font-size: 1.28rem;
-    color:black;
+   
     text-decoration: none; 
 }
 
@@ -182,17 +147,19 @@ header{
 .navitems li {
     
     margin-right: 10rem; 
+
     
 }
 
 .navitems li:last-child {
     margin-right: 0; 
-    
+ 
 }
 
 .navitems li a {
     transition: all 0.3s ease 0s;
-    color:black;
+    color:azure;
+
     
 } 
 
@@ -208,34 +175,19 @@ min-height: 100vh;
 width: 100vw; 
 
 grid-template-columns: repeat(7,4fr);
-grid-template-rows: 0.5fr 1fr 1fr 1fr 1.2fr  min-content;
+grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr  min-content;
 grid-template-areas:
 'logo . .  .  . header .  '
   ' text text text text text text text '
   '. . carimg . carbtn . .'
   '. . busimg . busbtn . .'
   '. . trainimg . trainbtn . .';
-  
+
+       
 
 
 }
-
-.mainpage
-{   
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80%;
-        background-image: radial-gradient(circle, #2d706c, #01796F, #028058, #00543c);
-        background-size: 600% 600%;
-        animation: gradientAnimation 40s ease infinite;
-        z-index: -1;
-    
-}
-
-
-
-
+ 
 
 
 .secondPageDiv > h5
@@ -244,8 +196,9 @@ grid-template-areas:
     font-size: 2.5rem;
     text-align: center;
     color:azure;
+    margin-bottom: 5rem;
  
- 
+  
 }
 
 
@@ -254,7 +207,7 @@ grid-template-areas:
 .car
 {
     grid-area: carbtn;
-    margin-top: -3rem;
+  
 
    
 }
@@ -262,13 +215,14 @@ grid-template-areas:
 .bus
 {
     grid-area: busbtn;
-    margin-top: -1rem;
+    margin-top:5rem;
+  
 }
 
 .train
 {
     grid-area: trainbtn;
-   
+    margin-top:4rem;
 
    
 }
@@ -286,23 +240,25 @@ grid-template-areas:
 {
     grid-area: busimg;
     max-width: 19rem;
-    max-height: 11rem;
+    max-height: 11rem;   
    
 }
 
 .trainImg
 {
-    max-width: 22rem;
-    max-height: 12rem;
+    max-width: 21rem;
+    max-height: 12rem;   
     grid-area: trainimg;
-   
+    
+
+  
 
 }
 
 
 .awarenessPage
 {
-    margin-top: -85rem;
+   
     display: grid;
     min-height: 100vh;
     width: 100vw; 
@@ -320,7 +276,7 @@ grid-template-areas:
 {
 
 grid-area: textA;
-margin-top: 47rem;
+margin-top: 10rem;
 
 }
 
@@ -341,46 +297,95 @@ margin-top: 47rem;
 }
 
 
-.referencepage
+.section-heading:first-child
 {
+    margin-top: 10rem;
+}
+
+
+.section-content{
+ 
+    max-width: 80vw;
+    color:#01796F;
+    font-weight:500;
+    padding: 3rem;
+    font-size: 1rem;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+    background-color: aliceblue;
+    line-height: 1.5rem;
+ 
+ 
    
+}
+
+
+.section-content:last-child{
+ 
+    color:#01796F;
+    font-weight:500;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    font-size: 1rem;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+    background-color: aliceblue;
+    line-height: 1.5rem;
+ 
+   
+}
+
+.section-content:last-child a
+{
+    font-size: 1rem;
+}
+
+
+
+.references
+{
+    display: grid;
+    place-items: center;
+}
+
+
+
+
+.futurePage
+{
+
+  
     display: grid;
     min-height: 100vh;
     width: 100vw; 
-    grid-template-columns: repeat(1,1fr) repeat(5,2fr) repeat(1,2fr);
-    grid-template-rows: 0.2fr 0.5fr 1fr min-content;
+    grid-template-columns: repeat(1,2fr) repeat(5,4fr) repeat(1,2fr);
+    grid-template-rows: 0.1fr 0.5fr 0.7fr min-content;
     grid-template-areas:
     'logo . .  .  . header . '
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . ';
 
-    
+   
+
 }
 
-
-.referencepage > h2
-{
+.futurePage > h3{
 
 grid-area: textA;
-
-
+margin-top: 8rem;
 }
 
-.referencepage > h3
-{
-
-grid-area: contentA;
-line-height:1.5rem;
-color:#01796F;
-width: auto;
-font-weight:500;
-padding: 3rem;
-font-size: 1rem;
-border-radius: 3rem;
-margin-top: 3rem;
-margin-bottom: 3rem;
-background-color: aliceblue;
-
+.futurePage > p {
+    grid-area: contentA;
+    line-height:1.5rem;
+    color:#01796F;
+    width: auto;
+    font-weight:500;
+    padding: 3rem;
+    font-size: 1rem;
+    border-radius: 3rem;
+    margin-bottom: 3rem;
+    background-color: aliceblue;
 
 }
 
@@ -413,44 +418,44 @@ button
 .thirdPage
 {
     
-   /* display: grid;
-    place-items: center; 
-    width: 100%;
-    height: 100vh;
-  
-    grid-template-columns: repeat(7,4fr);
-    grid-template-rows: 0.5fr  min-content;
-    grid-template-areas:
-    'logo . .  .  . header .  '; */
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
-    
-    background-size: 600% 600%; 
-    animation: gradientAnimation 50s ease infinite; 
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw; 
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 0.4fr 0.2fr 0.3fr min-content;
+    grid-template-areas:
+    '. . texta texta texta  . . '
+    '. .  box box box  . . '
+      '. . btn btn btn  . . ';
+
+
+
 }
 
-.thirdPageH {
+.thirdPage  > h3 {
     
-    font-size: 3rem;
+    font-size: 2rem;
+    grid-area: texta;
+    margin-top: 10rem;
   
 
+}
+
+
+.thirdPage > button
+{
+    grid-area: btn;
 }
 
 
   .editableBox {
-
+    grid-area: box;
     outline: 0px solid transparent; 
     font-size: 1.3rem;
     width: 7rem;
     height: 3rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
     border-radius: 4px;
     max-height: 1.5em; 
     overflow: hidden;
@@ -467,10 +472,7 @@ button
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
-    background-size: 600% 600%;
-    animation: gradientAnimation 50s ease infinite; 
-    background-attachment: fixed;
+ 
 
 }
 
@@ -512,10 +514,7 @@ button
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient(circle, #2d706c, #01796F,#028058,#00543c);
-    background-size: 600% 600%; 
-    animation: gradientAnimation 50s ease infinite; 
-    background-attachment: scroll;
+
 
 }
 
@@ -548,26 +547,18 @@ button
 
 .nav{
 
-  
- 
-   
-        display: grid;
-        place-items: center;
-        width: 100%;
-        max-height: 0.1rem;
-        color: #2A4C09;
-        background-color: #2d706c;
-        grid-template-columns: repeat(1, 4fr) repeat(2, 3.7fr) repeat(4, 4fr);
-        grid-template-rows: 0.5fr min-content;
-        grid-template-areas: 'logo . . header . . .';
-    
-    
+    display: grid;
+    place-items: center;
+    width: 100%;
+    color: azure;
+    grid-template-columns: repeat(1, 4fr) repeat(2, 3.7fr) repeat(4, 4fr);
+    grid-template-rows: 0.5fr min-content;
+    grid-template-areas: 'logo . . header . . .';
+    max-height: 2rem;
+       
 }
 
 
-.homepage > h1 {
-    color:black;
-}
 
 
 @media only screen and (max-width: 600px) {

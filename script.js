@@ -1,15 +1,35 @@
 
-
 const Page = document.createElement('div');
 Page.classList.add('mainpage');
 
+
+  
+
+
+var canvas1 = document.createElement("canvas");
+canvas1.id = "tree1";
+canvas1.setAttribute("role", "img");
+canvas1.setAttribute("aria-label", "A tree growing until it bears fruit, dropping its fruit, shrinking, and repeating the cycle");
+
+
+var canvas2 = document.createElement("canvas");
+canvas2.id = "tree2";
+canvas2.setAttribute("role", "img");
+canvas2.setAttribute("aria-label", "A tree growing until it bears fruit, dropping its fruit, shrinking, and repeating the cycle");
+
+
+Page.appendChild(canvas1);
+Page.appendChild(canvas2);
 
     createFirstPage();
     function createFirstPage() {
    
         Page.classList.add('homepage');
-        Page.classList.remove('mainpage');
-        Page.classList.remove('referencepage');
+
+        Page.classList.remove('references');
+        Page.classList.remove('future');
+        Page.classList.remove('awarenessPage');
+        Page.classList.remove('secondPageDiv');
    
       
         const Header = document.createElement('div');
@@ -30,42 +50,14 @@ Page.classList.add('mainpage');
         document.body.appendChild(Page);
     }
 
-  
-    function createLeaf() {
-        const leaf = document.createElement('div');
-        leaf.classList.add('leaf');
-        leaf.style.left = `${Math.random() * window.innerWidth}px`;
-        document.getElementById('leaves-container').appendChild(leaf);
-        
-     
-        const duration = Math.random() * 3 + 3; // Between 3 to 8 seconds
-        leaf.style.animation = `fall ${duration}s linear forwards`;
-        
-        
-        setTimeout(() => {
-          leaf.remove();
-        }, duration * 1000);
-      }
-      
-      function createLeaves(numLeaves) {
-        for (let i = 0; i < numLeaves; i++) {
-          setTimeout(createLeaf, Math.random() * 2000); 
-        }
-      }
-      
- 
-      const screenWidth = window.innerWidth;
-      const numLeaves = screenWidth > 1200 ? 70 : screenWidth > 600 ? 20 : 10;
-      
-     
-      createLeaves(numLeaves);
-    
 
     function createSecondPage() {
        
         Page.classList.add('secondPageDiv');
-        Page.classList.add('mainpage');
-        Page.classList.remove('referencepage');
+        Page.classList.remove('homepage');
+        Page.classList.remove('references');
+        Page.classList.remove('future');
+        Page.classList.remove('awarenessPage');
         
         Page.innerHTML = "<h5>Choose Your Mode of Transportation</h5>";
     
@@ -76,7 +68,7 @@ Page.classList.add('mainpage');
     
         const carButton = document.createElement('button');
         carButton.addEventListener('click', () => {
-            document.body.innerHTML = '';
+            
             TripTime('car');
         });
         carButton.textContent = 'Car';
@@ -90,7 +82,7 @@ Page.classList.add('mainpage');
     
         const busButton = document.createElement('button');
         busButton.addEventListener('click', () => {
-            document.body.innerHTML = '';
+           
             TripTime('bus');
         });
         busButton.textContent = 'Bus';
@@ -104,7 +96,7 @@ Page.classList.add('mainpage');
     
         const trainButton = document.createElement('button');
         trainButton.addEventListener('click', () => {
-            document.body.innerHTML = '';
+           
             TripTime('train');
         });
         trainButton.textContent = 'Train';
@@ -125,6 +117,7 @@ homeLink.addEventListener("click", function(event) {
      Page.classList.remove('secondPageDiv');
      Page.classList.remove('awarenessPage');
      Page.classList.remove('referencepage');
+     Page.classList.remove('futurePage');
      Page.innerHTML = '';
      Page.textContent = '';
      createFirstPage();
@@ -141,11 +134,13 @@ const awarenessLink = document.getElementById("awarenessLink");
 awarenessLink.addEventListener("click", function(event) {
     event.preventDefault();
     
-    Page.classList.remove('referencepage');
+   
     Page.classList.remove('secondPageDiv');
+    Page.classList.remove('futurePage');
+
     Page.textContent = "";
     Page.innerHTML = "";
-    Page.classList.add('mainpage');
+  
   
 
     Page.innerHTML+=" <h2> General Awareness on Carbon Emission <h2>";
@@ -165,23 +160,29 @@ awarenessLink.addEventListener("click", function(event) {
 
 function TripTime(viechle)
 {
-   const tripTime = document.createElement('div');
-   tripTime.classList.add('thirdPage');
 
-   const tripTimeQ = document.createElement('div');
-   tripTimeQ.classList.add('thirdPageH');
-   tripTimeQ.textContent= "Enter your Trip Distance in Kilometres ";
-   tripTime.appendChild(tripTimeQ);
+   Page.innerHTML = '';
+   Page.textContent = '';
+   Page.classList.remove('referencepage');
+   Page.classList.remove('secondPageDiv');
+  
+   Page.classList.add('thirdPage');
+
+   
+ 
+   
+   Page.innerHTML += " <h3> Enter your Trip Distance in Kilometres </h3> ";
+   
 
    const editTime = document.createElement('div');
    editTime.classList.add('editableBox');;
    editTime.contentEditable = true;
    editTime.textContent=" ";
-   tripTime.appendChild(editTime);
+   Page.appendChild(editTime);
 
    const calculateButton = document.createElement('button');
    calculateButton.textContent = "Calculate";
-   tripTime.appendChild(calculateButton);
+   Page.appendChild(calculateButton);
 
     calculateButton.addEventListener('click', function() {
 
@@ -196,6 +197,7 @@ function TripTime(viechle)
     if(viechle==='car')
     {
 
+
       carCarbonEmission(editedTime, viechle);
 
     }
@@ -206,7 +208,7 @@ function TripTime(viechle)
           busCarbonEmission(editedTime, viechle);
     }
 
-    else
+    else if (viechle==='train')
     {
         trainCarbonEmission(editedTime, viechle);
     }
@@ -214,9 +216,7 @@ function TripTime(viechle)
 
 });
 
-
-document.body.appendChild(tripTime);
-
+document.body.appendChild(Page);
 
 
 }
@@ -245,19 +245,18 @@ document.body.appendChild(tripTime);
 
     trainCarbon() 
         {
-            const carCarbonE = this.time * 10; 
+            const carCarbonE = this.time * 283; 
             return carCarbonE;
         }
     
 }
 
 
-    
-
 
 function carCarbonEmission(editedTime, viechle)
 {
-    document.body.textContent='';
+    Page.innerHTML="";
+    Page.textContent="";
     const emission = new CarbonEmission(editedTime, viechle);
     const carCarbonC = emission.carCarbon(); 
 
@@ -265,7 +264,6 @@ function carCarbonEmission(editedTime, viechle)
     const carbonEDivH = document.createElement('div');
     const carbonEDiv = document.createElement('div');
     
-    const fourthPage = document.createElement('div');
     carbonEDivH.classList.add('HeaderV')
    
 
@@ -273,30 +271,27 @@ function carCarbonEmission(editedTime, viechle)
     carbonEDiv.textContent+= carCarbonC; 
     carbonEDiv.textContent+= " grams of Co2 are emitted";
     
-    fourthPage.appendChild(carbonEDivH);
-    fourthPage.appendChild(carbonEDiv);
+    Page.appendChild(carbonEDivH);
+    Page.appendChild(carbonEDiv);
   
 
     const Tree = document.createElement('div');
     Tree.classList.add('TreeQ');
     Tree.textContent+= "How many trees need to be planted per year to offset your  net carbon emissions?";
-    fourthPage.appendChild(Tree);
+    Page.appendChild(Tree);
 
-    // const TreeButton = document.createElement('button');
-    // TreeButton.classList.add('Treebtn');
-    // TreeButton.textContent += "See Trees";
-    // fourthPage.appendChild(TreeButton);
-
-    TreesPerEmission(carCarbonC,viechle,fourthPage);
+    TreesPerEmission(carCarbonC,viechle);
      
     
      const OthersButton = document.createElement('button');
      OthersButton.classList.add('Treebtn');
      OthersButton.textContent += "Compare Emissions";
-     fourthPage.appendChild(OthersButton);
+     Page.appendChild(OthersButton);
    
    OthersButton.addEventListener('click', () =>
    {
+    Page.innerHTML="";
+    Page.textContent="";
     const carbonODiv = document.createElement('div');
     
     const carbonHDiv = document.createElement('div');
@@ -314,61 +309,62 @@ function carCarbonEmission(editedTime, viechle)
     carbonTDiv.textContent+= carCarbonT;
     carbonTDiv.textContent+= " grams of Co2";
 
-    fourthPage.classList.add('fourthPage');
-    fourthPage.appendChild(carbonHDiv);
-    fourthPage.appendChild(carbonODiv);
-    fourthPage.appendChild(carbonTDiv);
+   Page.classList.add('fourthPage');
+   Page.appendChild(carbonHDiv);
+   Page.appendChild(carbonODiv);
+   Page.appendChild(carbonTDiv);
 
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
     carbonHDiv.classList.add('HeaderV');
     carbonTDiv.classList.add('carbon');
+    
+  
+    document.body.appendChild(Page); 
 
    });
-    
-    document.body.appendChild(fourthPage);
-  
-    // TreeButton.addEventListener('click', () => {
-       
-    // TreesPerEmission(carCarbonC,viechle,fourthPage);
 
-    // });
    
+  
+   document.body.appendChild(Page); 
 
 }
 
 function busCarbonEmission(editedTime, viechle)
 {
-    document.body.textContent='';
+    Page.innerHTML="";
+    Page.textContent="";
     const emission = new CarbonEmission(editedTime, viechle);
     const busCarbonE = emission.busCarbon(); 
     
     
-    const fourthPage = document.createElement('div');
 
     const carbonEDiv = document.createElement('div');
     
     const carbonEDivH = document.createElement('div');
     carbonEDivH.classList.add('HeaderV')
-    fourthPage.appendChild(carbonEDivH)
+    Page.appendChild(carbonEDivH)
 
     carbonEDivH.textContent+= "With the Bus";
     carbonEDiv.textContent+= busCarbonE; 
     carbonEDiv.textContent+= " grams of Co2 are emitted";
     
 
-    fourthPage.appendChild(carbonEDiv);
+    Page.appendChild(carbonEDiv);
 
-    TreesPerEmission(busCarbonE,viechle,fourthPage);
+    TreesPerEmission(busCarbonE,viechle);
 
     const OthersButton = document.createElement('button');
     OthersButton.classList.add('Treebtn');
     OthersButton.textContent += "Compare Emissions";
-    fourthPage.appendChild(OthersButton);
+    Page.appendChild(OthersButton);
     
     OthersButton.addEventListener('click', () =>
     {
+    
+    Page.innerHTML="";
+    Page.textContent="";
     const carbonODiv = document.createElement('div');
 
     const carbonHDiv = document.createElement('div');
@@ -386,10 +382,10 @@ function busCarbonEmission(editedTime, viechle)
     carbonTDiv.textContent+= carCarbonT;
     carbonTDiv.textContent+= " grams of Co2";
 
-    fourthPage.classList.add('fourthPage');
-    fourthPage.appendChild(carbonHDiv);
-    fourthPage.appendChild(carbonODiv);
-    fourthPage.appendChild(carbonTDiv);
+    Page.classList.add('fourthPage');
+    Page.appendChild(carbonHDiv);
+    Page.appendChild(carbonODiv);
+    Page.appendChild(carbonTDiv);
 
 
     carbonEDiv.classList.add('carbon');
@@ -397,45 +393,57 @@ function busCarbonEmission(editedTime, viechle)
     carbonHDiv.classList.add('HeaderV');
     carbonTDiv.classList.add('carbon');
 
+    
+  
+    document.body.appendChild(Page); 
+
     });
       
-    document.body.appendChild(fourthPage);
+  
 
+  
+    document.body.appendChild(Page); 
 
 
 }
 
 function trainCarbonEmission(editedTime, viechle)
 {
-    document.body.textContent='';
+    Page.innerHTML="";
+    Page.textContent="";
     const emission = new CarbonEmission(editedTime, viechle);
     const trainCarbonE = emission.trainCarbon();
 
 
     const carbonEDivH = document.createElement('div');
     const carbonEDiv = document.createElement('div');
-    
-    const fourthPage = document.createElement('div');
-    carbonEDivH.classList.add('HeaderV')
-    fourthPage.appendChild(carbonEDivH)
+  
+    carbonEDivH.classList.add('HeaderV');
+    Page.appendChild(carbonEDivH);
 
     carbonEDivH.textContent+= "With the train";
     carbonEDiv.textContent+= trainCarbonE; 
     carbonEDiv.textContent+= " grams of Co2 are emitted";
     
-  
-    fourthPage.appendChild(carbonEDiv);
+    Page.appendChild(carbonEDivH);
+    Page.appendChild(carbonEDiv);
 
-    TreesPerEmission(busCarbonE,viechle,fourthPage);
+    const Tree = document.createElement('div');
+    Tree.classList.add('TreeQ');
+    Tree.textContent+= "How many trees need to be planted per year to offset your  net carbon emissions?";
+    Page.appendChild(Tree);
+
+    TreesPerEmission(trainCarbonE,viechle);
     
     const OthersButton = document.createElement('button');
     OthersButton.classList.add('Treebtn');
     OthersButton.textContent += "Compare Emissions";
-    fourthPage.appendChild(OthersButton);
+    Page.appendChild(OthersButton);
     
     OthersButton.addEventListener('click', () =>
     {
-   
+     Page.innerHTML="";
+     Page.textContent="";
     const carbonODiv = document.createElement('div');
 
     
@@ -453,28 +461,32 @@ function trainCarbonEmission(editedTime, viechle)
     carbonBDiv.textContent+= carCarbonB; 
     carbonBDiv.textContent+= " grams of Co2"; 
    
-    fourthPage.classList.add('fourthPage');
-    fourthPage.appendChild(carbonHDiv);
-    fourthPage.appendChild(carbonODiv);
-    fourthPage.appendChild(carbonBDiv);
+    Page.classList.add('fourthPage');
+    Page.appendChild(carbonHDiv);
+    Page.appendChild(carbonODiv);
+    Page.appendChild(carbonBDiv);
 
     carbonEDiv.classList.add('carbon');
     carbonODiv.classList.add('carbon');
     carbonHDiv.classList.add('HeaderV');
     carbonBDiv.classList.add('carbon');
+    document.body.appendChild(Page);
+
 
     });
     
-    document.body.appendChild(fourthPage);
+    document.body.appendChild(Page);
 
    
 
 }
 
-function TreesPerEmission(emission, vehicle, fourthPage) {
-    fourthPage.textContent = '';
-    const fifthPage = document.createElement('div');
-    fifthPage.classList.add('fifthPage');
+function TreesPerEmission(emission, vehicle) {
+ 
+    Page.innerHTML="";
+    Page.textContent="";
+   
+    Page.classList.add('fifthPage');
 
     const TreeDiv = document.createElement('div');
     TreeDiv.textContent += "With the " + vehicle + " as your mode of transportation, the carbon emissions are equivalent to ";
@@ -502,29 +514,74 @@ function TreesPerEmission(emission, vehicle, fourthPage) {
         }
     }, 300); 
 
-    fifthPage.appendChild(TreeDiv);
-    fifthPage.appendChild(Treepic);
+    Page.appendChild(TreeDiv);
+    Page.appendChild(Treepic);
 
-    document.body.appendChild(fifthPage);
+   
 }
 
 const refLink = document.getElementById("refLink");
-
 refLink.addEventListener("click", function(event) {
-   
-   
     event.preventDefault();
 
-   
+    Page.classList.remove('homepage');
+    Page.classList.remove('awarenessPage');
+    Page.classList.remove('futurePage');
+    Page.innerHTML+="";
+    Page.textContent+="";
+    
+    
+
+    Page.innerHTML = `
+    <h3 class="section-heading">Assumptions</h3>
+    <p class="section-content">
+        It is acknowledged that various vehicle models emit differing amounts of carbon based on their make, model, and fuel efficiency. To maintain simplicity and generalizability in our calculations, we have opted to utilize data derived from average vehicle emissions based in the United States. In the absence of comprehensive research on public transport vehicles' emissions in Saudi Arabia, we have relied on data sourced from the United States for our analysis. Given the similarities in vehicle technology, fuel composition, and operating conditions between the two regions, we are assuming that the emission patterns observed in the United States will be reasonably representative of those in Saudi Arabia. While this assumption allows us to make informed estimates, it is essential to acknowledge the potential differences between the two contexts that may affect emission outcomes. As such, our findings should be interpreted with caution, and further localized research in Saudi Arabia is warranted to validate and refine our assumptions.
+    </p>
+    <h3 class="section-heading">Limitations</h3>
+    <p class="section-content">
+        One notable limitation of our project is the carbon emissions generated during idling periods, particularly in congested traffic conditions. While our calculations accurately capture emissions during vehicle movement, they do not account for the carbon emitted when a vehicle is stationary but the engine is running. Idling represents a significant source of emissions, especially in urban areas where traffic congestion is common. By not incorporating this aspect into our analysis, our estimates may underestimate the true environmental impact of driving in densely populated areas or during peak traffic times. Future iterations of our project could explore methods to integrate idling emissions data, thereby providing a more comprehensive assessment of carbon footprints associated with vehicular travel.
+    </p>
+    <h3 class="section-heading">References</h3>
+    <p class="section-content">
+        1-Congressional Budget Office. “The Role of Transportation in U.S. Greenhouse Gas Emissions.” Congressional Budget Office, December 2022, <br> <a href="http://www.cbo.gov/system/files/2022-12/58566-co2-emissions-transportation.pdf">www.cbo.gov/system/files/2022-12/58566-co2-emissions-transportation.pdf</a>.<br> <br>
+        2-United States Environmental Protection Agency. “Greenhouse Gas Emissions from a Typical Passenger Vehicle.” EPA,  <br> <a href="http://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-">www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-</a>.<br> <br>
+        3-Oak Ridge National Laboratory. “Transportation Energy Data Book Edition 39.” Oak Ridge National Laboratory, February 2021, <br> <a href="http://tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf#page=68">tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf#page=68</a>.<br> <br>
+        4-Embassy of The Kingdom of Saudi Arabia. “Transportation & Communication.” The Embassy of The Kingdom of Saudi Arabia,  <br> <a href="http://saudiembassy.net">saudiembassy.net</a>.<br> <br>
+        5-Our World in Data. “Saudi Arabia: CO2 Country Profile.” Our World in Data,  <br> <a href="http://ourworldindata.org/co2/country/saudi-arabia">ourworldindata.org/co2/country/saudi-arabia</a>.<br><br>
+        6-Riyadh Bus. “Plan.”  <br> <a href="http://riyadhbus.sa">riyadhbus.sa</a>.<br> <br>
+        7-United Nations Development Programme. “Online services reduce CO2 emissions from Saudi cars with some 0.77 million tons annually.” UNDP, <br> <a href="http://www.undp.org">www.undp.org</a>.<br> <br>
+    </p>
+`;
+
+  Page.classList.add('references');
+  document.body.appendChild(Page);
+  
+});
 
 
+const futureLink = document.getElementById("futureLink");
 
+futureLink.addEventListener("click", function(event) {
+    
+    event.preventDefault();
+
+      
     Page.innerHTML="";
     Page.textContent="";
-    Page.innerHTML += "<h2> Assumptions </h2>";
-    Page.innerHTML+= "<h3> hi </h3>";
-    Page.classList.add('referencepage');
+
+    Page.classList.remove('homepage');
+    Page.classList.remove('awarenessPage');
+    Page.classList.remove('references');
+    
+    Page.classList.add('futurePage');
+   
+    Page.innerHTML += "<h3> Future Possibilities </h3>";
+    Page.innerHTML += "<p> 1-We aim to enhance the accuracy of carbon emission calculations by introducing the option for users to specify the type of car they are driving. We recognize that vehicles equipped with different engine types, makes, and models can vary significantly in their carbon emission profiles. By allowing users to input this specific information, we can tailor our calculations to better reflect the emissions associated with their individual vehicles. This approach will enable us to provide more personalized and precise assessments of carbon footprints, empowering users with valuable insights into the environmental impact of their transportation choices.  <br> <br> <br> <br> 2- Additionally, we intend to introduce an option for users to specify the type of fuel their vehicle is running on, thereby enabling more precise calculations of carbon emissions. We acknowledge that the composition of fuels varies widely, leading to significant differences in their carbon emission profiles. This feature will offer users a more comprehensive understanding of the environmental impact of their transportation choices, empowering them to make informed decisions that align with their sustainability goals.</p>";
+    
   
+
+    document.body.appendChild(Page);
+
 });
 
 
@@ -601,16 +658,16 @@ class Tree {
 	detectTheme(mq) {
 		this.darkTheme = mq.matches;
 	}
+
 	draw() {
-		const { c, W, H, debug, branches, fruit } = this;
-
-		c.clearRect(0,0,W,H);
-
-		const lightness = this.darkTheme ? 90 : 10;
-		const foreground = `hsl(223,10%,${lightness}%)`;
-		c.fillStyle = foreground;
-		c.strokeStyle = foreground;
-
+        const { c, W, H, debug, branches, fruit } = this;
+    
+        c.clearRect(0,0,W,H);
+    
+        const lightness = this.darkTheme ? 80 : 90; // Adjusted lightness value
+        const foreground = `hsl(223,10%,${lightness}%)`; // Changed lightness value
+        c.fillStyle = foreground;
+        c.strokeStyle = foreground;
 		// debug info
 		if (debug === true) {
 			const textX = 24;
