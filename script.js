@@ -391,7 +391,7 @@ function busCarbonEmission(editedTime, vehicle)
 
     carbonEDivH.textContent+= "With the Bus";
     carbonEDiv.textContent+= busCarbonE; 
-    carbonEDiv.textContent+= " grams of Co2 are emitted";
+    carbonEDiv.textContent+= " grams of CO₂ are emitted";
     Page.appendChild(carbonEDiv);
 
    
@@ -429,7 +429,7 @@ function trainCarbonEmission(editedTime, vehicle)
 
     carbonEDivH.textContent+= "With the train";
     carbonEDiv.textContent+= trainCarbonE; 
-    carbonEDiv.textContent+= " grams of Co2 are emitted";
+    carbonEDiv.textContent+= " grams of CO₂ are emitted";
     
     Page.appendChild(carbonEDivH);
     Page.appendChild(carbonEDiv);
@@ -559,14 +559,14 @@ function TreesPerEmission(emission, editedTime, vehicle) {
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
     carbonODiv.textContent+= carCarbonC; 
-    carbonODiv.textContent+= " grams of Co2"; 
+    carbonODiv.textContent+= " grams of CO₂"; 
    
     
     const carbonTDiv = document.createElement('div');
     carbonTDiv.textContent ="A train emits ";
     const carCarbonT = emission.trainCarbon(); 
     carbonTDiv.textContent+= carCarbonT;
-    carbonTDiv.textContent+= " grams of Co2";
+    carbonTDiv.textContent+= " grams of CO₂";
 
     Page.classList.add('fourthPage');
     Page.appendChild(carbonHDiv);
@@ -605,13 +605,13 @@ function TreesPerEmission(emission, editedTime, vehicle) {
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
     carbonODiv.textContent+= carCarbonC; 
-    carbonODiv.textContent+= " grams of Co2"; 
+    carbonODiv.textContent+= " grams of CO₂"; 
 
     const carbonBDiv = document.createElement('div');
     carbonBDiv.textContent+= "A bus emits ";
     const carCarbonB = emission.busCarbon(); 
     carbonBDiv.textContent+= carCarbonB; 
-    carbonBDiv.textContent+= " grams of Co2"; 
+    carbonBDiv.textContent+= " grams of CO₂"; 
    
     Page.classList.add('fourthPage');
     Page.appendChild(carbonHDiv);

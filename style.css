@@ -530,7 +530,6 @@ button
     align-items: center;
     justify-content: center;
 
-
 }
 
 
@@ -588,12 +587,12 @@ button
 
     .homepage {
        
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-rows: min-content 8fr min-content; 
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 0.5fr 8fr 8fr;
         grid-template-areas:
             '. . . . . . .'
-            'tree1 main main main button tree2 .' 
-            '. . . . . . .';
+            '. tree1 main main tree2 .' 
+            '. . button button  . .';
     }
     
 
@@ -608,6 +607,24 @@ button
           'busimg busbtn'
           'trainimg trainbtn';
       }
+
+
+      
+.thirdPage {
+   
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.4fr 0.2fr 0.3fr min-content;
+    grid-template-areas:
+     '.  texta texta texta  .'
+     '. box box box .' 
+     '.  btn btn btn .';
+}
+
+.fourthPage > h4
+{
+    max-width: 60vw;
+}
+
       
       .awarenessPage
     {
@@ -676,7 +693,7 @@ button
     .carImg{
         max-width: 8rem;
         max-height: 8rem; 
-        animation: move 1.5s linear infinite;
+        animation: move 1.5s linear infinite alternate;  
 
     }
 
