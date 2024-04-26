@@ -656,7 +656,7 @@ button
 
     .navitems {
         justify-content: center;
-        font-size: 0.1rem;
+        font-size: 0.09rem;
        
     }
 
@@ -666,8 +666,8 @@ button
 
 
     .navitems li {
-        margin-right: 0.6rem; 
-        font-size: 0.1rem;
+        margin-right: 0.2rem; 
+        font-size: 0.09rem;
     }
 
     .navitems li:first-child {
@@ -763,7 +763,6 @@ button
     .HeaderV
   {
     font-size: 1.3rem;
-    margin-top: 4rem;
     max-width: 80vw;
 
   }
