@@ -586,6 +586,17 @@ button
     }
 
 
+    .homepage {
+       
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: min-content 8fr min-content; 
+        grid-template-areas:
+            '. . . . . . .'
+            'tree1 main main main button tree2 .' 
+            '. . . . . . .';
+    }
+    
+
     .secondPageDiv {
         grid-template-columns: repeat(2, 1fr); 
         margin-bottom: 5rem;
@@ -728,14 +739,7 @@ button
         width: 3rem;
     }
 
-    .TreeBackg {
-       
-        display: flex;
-        flex-wrap: wrap; 
-        flex-direction: column;
-        align-items: center;
-       
-    }
+    
  
 }
 
