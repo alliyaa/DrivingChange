@@ -666,13 +666,10 @@ button
 
 
     .navitems li {
-        margin-right: 0.5rem; 
+        margin-right: 0.75rem; 
         font-size: 0.1rem;
     }
 
-    .navitems li:first-child {
-        margin-left:-0.2rem;
-    }
 
 
     .logo {
@@ -776,7 +773,6 @@ button
 {
 text-align: center;
 font-size: 2.5rem;
-
 
 }
 
