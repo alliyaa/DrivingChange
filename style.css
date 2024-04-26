@@ -666,8 +666,8 @@ button
 
 
     .navitems li {
-        margin-right: 0.2rem; 
-        font-size: 0.09rem;
+        margin-right: 0.5rem; 
+        font-size: 0.1rem;
     }
 
     .navitems li:first-child {
@@ -677,7 +677,6 @@ button
 
     .logo {
         margin-left: auto;
-        margin-right: auto;
         max-width: 11rem;
         max-height: 5rem;
                
@@ -685,7 +684,7 @@ button
 
     header {
         padding: 10px; 
-        font-size: 0.4rem;
+        font-size: 0.1rem;
     }
 
 
@@ -764,6 +763,7 @@ button
   {
     font-size: 1.3rem;
     max-width: 80vw;
+    margin-top: 1rem;
 
   }
     .tree {
