@@ -666,9 +666,9 @@ button
 
 
     .navitems li {
-        margin-right: 0.7rem; 
+        margin-right: 0.6rem; 
         font-size: 0.1rem;
-        border: 2px solid blue;
+      
     }
 
     
@@ -681,10 +681,9 @@ button
 
     .logo {
         margin-left: auto;
-        margin-right: -1rem;
+        margin-right: -1.2rem;
         max-width: 11rem;
         max-height: 5rem;
-        border: 2px solid rgb(104, 38, 93);
                
     }
 
@@ -791,6 +790,63 @@ font-size: 2.5rem;
     padding: 2.5rem;
 
 }
+
+
+
+.section-heading:first-child
+{
+    margin-top: 5rem;
+}
+
+
+.section-content{
+ 
+    max-width: 60vw;
+    padding: 2rem;
+ 
+   
+}
+
+
+.section-content:last-child{
+ 
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+     
+}
+
+
+
+.futurePage
+{
+
+
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 0.1fr 0.5fr 0.7fr min-content;
+    grid-template-areas:
+    'logo . .  .  . header . '
+    '. .  textA textA textA . . '
+      '. contentA contentA contentA contentA contentA . ';
+
+   
+
+}
+
+.futurePage > h3{
+
+grid-area: textA;
+margin-top: 5rem;
+}
+
+.futurePage > p {
+    grid-area: contentA;
+    padding: 2rem;
+    font-size: 1rem;
+   
+
+}
+
 
     
  
