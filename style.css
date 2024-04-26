@@ -666,16 +666,25 @@ button
 
 
     .navitems li {
-        margin-right: 0.75rem; 
+        margin-right: 0.7rem; 
         font-size: 0.1rem;
+        border: 2px solid blue;
     }
+
+    
+    .navitems li:first-child {
+        margin-right: -1rem;
+    }
+
 
 
 
     .logo {
         margin-left: auto;
+        margin-right: -1rem;
         max-width: 11rem;
         max-height: 5rem;
+        border: 2px solid rgb(104, 38, 93);
                
     }
 
