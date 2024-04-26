@@ -11,14 +11,12 @@ body
    
 }
 
-
 #tree1 {
 	display: block;
 	margin: auto;
 	object-fit: contain;
 	max-width: 50vw;
 	max-height: 50vh;
-
     grid-area: tree1;
 
 }
@@ -75,8 +73,7 @@ body
 {
 display: grid;
 place-items: center; 
-width: 100%;
-height: 100vh;
+min-height: 100vh;
 color:azure;
 grid-template-columns: repeat(7,1fr);
 grid-template-rows: 4fr 8fr 8fr min-content;
@@ -87,8 +84,6 @@ grid-template-areas:
 
  
 }
-
-
 
 
 .HeaderM
@@ -171,8 +166,7 @@ header{
 .secondPageDiv
 {
 display: grid;
-min-height: 100vh;
-width: 100vw; 
+
 
 grid-template-columns: repeat(7,4fr);
 grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr  min-content;
@@ -260,29 +254,30 @@ grid-template-areas:
 {
    
     display: grid;
-    min-height: 100vh;
-    width: 100vw; 
-    grid-template-columns: repeat(1,2fr) repeat(5,4fr) repeat(1,2fr);
+  
+  
+    margin-bottom: 15rem;
+    grid-template-columns: repeat(7,1fr);
     grid-template-rows: 1fr 1fr 1fr min-content;
     grid-template-areas:
     'logo . .  .  . header . '
     '. .  textA textA textA . . '
-      '. contentA contentA contentA contentA contentA . ';
+      '. contentA contentA contentA contentA contentA . '; 
+   
 
 
-}
+} 
+
 
 .awarenessPage > h2
 {
-
-grid-area: textA;
-margin-top: 10rem;
+    grid-area:textA;
+  
 
 }
 
 .awarenessPage > h3
 {
-    grid-area: contentA;
     line-height:1.5rem;
     color:#01796F;
     width: auto;
@@ -290,11 +285,13 @@ margin-top: 10rem;
     padding: 3rem;
     font-size: 1rem;
     border-radius: 3rem;
-    margin-top: 3rem;
+
     margin-bottom: 3rem;
     background-color: aliceblue;
+    grid-area: contentA;
 
 }
+
 
 
 .section-heading:first-child
@@ -415,54 +412,39 @@ button
 }
 
 
-.thirdPage
-{
-    
-
+.thirdPage {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    width: 100vw; 
-    grid-template-columns: repeat(7,1fr);
+    width: 100vw;
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 0.4fr 0.2fr 0.3fr min-content;
-    grid-template-areas:
-    '. . texta texta texta  . . '
-    '. .  box box box  . . '
-      '. . btn btn btn  . . ';
-
-
-
+    grid-template-areas: '. . texta texta texta . .' '. . box box box . .' '. . btn btn btn . .';
 }
 
-.thirdPage  > h3 {
-    
+.thirdPage > h3 {
     font-size: 2rem;
     grid-area: texta;
     margin-top: 10rem;
-  
-
 }
 
-
-.thirdPage > button
-{
+.thirdPage > button {
     grid-area: btn;
 }
 
-
-  .editableBox {
+.editableBox {
     grid-area: box;
-    outline: 0px solid transparent; 
+    outline: 0px solid transparent;
     font-size: 1.3rem;
     width: 7rem;
     height: 3rem;
     border-radius: 4px;
-    max-height: 1.5em; 
+    max-height: 1.5em;
     overflow: hidden;
     white-space: nowrap;
-    border:2px solid azure;
-   
+    border: 2px solid azure;
 }
+
 
 .fourthPage
 {   
@@ -476,11 +458,33 @@ button
 
 }
 
-.HeaderV
+.fourthPage > h4
 {
-    font-size: 2rem;
-    margin-top: 4rem;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    font-weight: 500;
+    margin-bottom: 5rem;
+}
 
+
+.fp
+{
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color:#2A4C09;
+    display: flex;
+    background-color: white;
+    padding: 3.5rem;
+    border-radius: 1.2rem;
+
+}
+
+
+.fpH
+{
+   font-size:2rem;
+   margin-top: 5rem;
 }
 
 .carbon
@@ -494,6 +498,16 @@ button
     padding: 3.5rem;
     border-radius: 1.2rem;
 }
+
+.HeaderV
+{
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    max-width: 80vw;
+
+}
+
+
 
 .TreeQ
 {
@@ -528,14 +542,14 @@ button
   
 }
    
-.TreeBackg
-{
-    
+.TreeBackg {
     margin-top: 4rem;
     text-align: center;
     margin-bottom: 4rem;
     display: flex;
     flex-wrap: wrap; 
+    flex-direction: row;
+    align-items: center; 
     max-width: 80vw;
     background-color: azure;
     padding-top: 3rem;
@@ -716,6 +730,15 @@ button
     .tree {
         margin-top: 0.5rem;
         width: 3rem;
+    }
+
+    .TreeBackg {
+       
+        display: flex;
+        flex-wrap: wrap; 
+        flex-direction: column;
+        align-items: center;
+       
     }
  
 }
