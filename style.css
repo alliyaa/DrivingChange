@@ -504,6 +504,7 @@ button
     font-size: 1.5rem;
     margin-top: 4rem;
     max-width: 80vw;
+    margin-bottom: 2rem;
 
 }
 
@@ -533,23 +534,11 @@ button
 }
 
 
-.tree {
-    margin-top: 1rem;
-    width: 3rem;
-    height: auto;
-    margin-right: 5px; 
- 
-  
-}
-   
+
 .TreeBackg {
-    margin-top: 4rem;
+    margin-top: 1rem; /* Adjust margin top as needed */
     text-align: center;
     margin-bottom: 4rem;
-    display: flex;
-    flex-wrap: wrap; 
-    flex-direction: row;
-    align-items: center; 
     max-width: 80vw;
     background-color: azure;
     padding-top: 3rem;
@@ -557,6 +546,13 @@ button
     padding-right: 1rem;
     padding-bottom: 3rem;
     border-radius: 1.2rem;
+}
+
+.tree {
+   
+    width: 3rem;
+    height: auto;
+    margin-right: 5px;
 }
 
 .nav{

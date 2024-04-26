@@ -450,9 +450,8 @@ function trainCarbonEmission(editedTime, vehicle)
 
 
 }
-
-function TreesPerEmission(emission,editedTime, vehicle) {
- 
+function TreesPerEmission(emission, editedTime, vehicle) {
+    
     Page.innerHTML="";
     Page.textContent="";
    
@@ -463,13 +462,12 @@ function TreesPerEmission(emission,editedTime, vehicle) {
     const Trees = (((emission / 1000) *252 / 20)).toFixed(1);
     const numTrees = Math.ceil(Trees);
 
-    TreeDiv.textContent += numTrees + " trees per year are needed to offset " + emission + " grams of CO₂ assuming you travel the same distance everyday" ;
+    TreeDiv.textContent += numTrees + " trees per year are required to offset " + emission + " grams of CO₂";
     TreeDiv.classList.add('HeaderV');
 
     const Treepic = document.createElement('div');
     Treepic.classList.add('TreeBackg');
 
-   
     let treeCounter = 0;
     const interval = setInterval(function () {
         if (treeCounter < numTrees) {
@@ -479,15 +477,22 @@ function TreesPerEmission(emission,editedTime, vehicle) {
             treeImg.classList.add('tree');
             Treepic.appendChild(treeImg);
             treeCounter++;
+            const treeHeight = Treepic.clientHeight;
+            TreeDiv.style.marginTop = treeHeight + 'px';
+            
         } else {
             clearInterval(interval);
-        }
-    }, 300); 
 
+        
+        }
+    }, 300);
+   
     Page.appendChild(TreeDiv);
     Page.appendChild(Treepic);
 
+   
  
+    
     const OthersButton = document.createElement('button');
     OthersButton.classList.add('Treebtn');
     OthersButton.textContent += "Compare Emissions";
