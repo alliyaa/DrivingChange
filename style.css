@@ -588,12 +588,28 @@ button
     .homepage {
        
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 0.5fr 8fr 8fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
         grid-template-areas:
             '. . . . . . .'
-            '. tree1 main main tree2 .' 
-            '. . button button  . .';
+            '. tree1 main tree2 .' 
+            '. . . button  . .';
     }
+
+    #tree1{
+        max-width: 20vw;
+        max-height: 20vh;
+       
+    
+    }
+    
+    
+    #tree2 {
+        max-width: 20vw;
+        max-height: 20vh;
+    
+    }
+    
+    
     
 
     .secondPageDiv {
