@@ -668,9 +668,15 @@ button
 
 
     .navitems li {
-        margin-right: 0.9rem; 
+        margin-right: 0.6rem; 
         font-size: 0.1rem;
     }
+
+
+    .navitems li:first-child {
+        margin-left:-0.2rem;
+    }
+
 
     .logo {
         margin-left: auto;
@@ -776,9 +782,7 @@ button
     .HeaderM
 {
 text-align: center;
-font-size: 1rem;
-
-
+font-size: 2rem;
 
 
 }
