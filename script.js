@@ -19,7 +19,8 @@ homeLink.addEventListener("click", function(event) {
      Page.textContent = '';
 
      createFirstPage();
-
+     Page.classList.remove('homepage');
+     Page.classList.add('rhome');
 
    
 });
@@ -34,7 +35,7 @@ awarenessLink.addEventListener("click", function(event) {
     Page.textContent = '';
     Page.classList.add('awarenessPage');
 
-    
+
     Page.classList.remove('homepage');
     Page.classList.remove('references');
     Page.classList.remove('futurePage');
@@ -308,21 +309,21 @@ document.body.appendChild(Page);
     }
     
     carCarbon() {
-            const carCarbonE = this.time * 597 * 2; 
+            const carCarbonE = this.time * 597; 
             return carCarbonE;
         }
     
 
     busCarbon() 
         {
-            const carCarbonE = this.time * 482 * 2; 
+            const carCarbonE = this.time * 482; 
             return carCarbonE;
         }
     
 
     trainCarbon() 
         {
-            const carCarbonE = this.time * 283 *2 ; 
+            const carCarbonE = this.time * 283; 
             return carCarbonE;
         }
     
