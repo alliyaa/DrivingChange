@@ -14,13 +14,13 @@ homeLink.addEventListener("click", function(event) {
      Page.classList.remove('thirdPage');
      Page.classList.remove('fifthPage');
      Page.classList.remove('fourthPage');
-     Page.classList.remove('futurePage');
+     Page.classList.remove('futurePage');   
      Page.innerHTML = '';
      Page.textContent = '';
 
      createFirstPage();
-   
      Page.classList.add('rhome');
+   
 
    
 });
@@ -43,6 +43,7 @@ awarenessLink.addEventListener("click", function(event) {
     Page.classList.remove('thirdPage');
     Page.classList.remove('fifthPage');
     Page.classList.remove('fourthPage');
+    Page.classList.remove('rhome');
    
   
     Page.innerHTML+=" <h2> General Awareness on Carbon Emission <h2>";
@@ -53,7 +54,6 @@ awarenessLink.addEventListener("click", function(event) {
 
     document.body.appendChild(Page);
 });
-
 
 
 
