@@ -648,6 +648,7 @@ button
       
       .awarenessPage
     {
+
     
     display: grid;
     min-height: 100vh;
@@ -778,6 +779,10 @@ button
         width: 3rem;
     }
 
+    .Treebtn
+    {
+        margin-bottom: 2rem;
+    }
 
     .HeaderM
 {
@@ -854,6 +859,7 @@ margin-top: 2rem;
 {
     max-width: 60vw;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 
 }
 
