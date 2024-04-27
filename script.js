@@ -350,7 +350,8 @@ function carCarbonEmission(editedTime, vehicle)
    
 
     carbonEDivH.textContent+="With the car ";
-    carbonEDiv.textContent+= carCarbonC; 
+    const fcarCarbonC = formatNumberWithCommas(carCarbonC);
+    carbonEDiv.textContent+=fcarCarbonC; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
     
     Page.appendChild(carbonEDivH);
@@ -364,7 +365,7 @@ function carCarbonEmission(editedTime, vehicle)
     Page.appendChild(Strees);
 
     Strees.addEventListener('click', () => {
-    TreesPerEmission(carCarbonC,editedTime,vehicle);
+    TreesPerEmission(fcarCarbonC,carCarbonC,editedTime,vehicle);
     });
     
   
@@ -395,7 +396,8 @@ function busCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDivH)
 
     carbonEDivH.textContent+= "With the Bus";
-    carbonEDiv.textContent+= busCarbonE; 
+    const busCraboncF = formatNumberWithCommas(busCarbonE);
+    carbonEDiv.textContent+= busCraboncF; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
     Page.appendChild(carbonEDiv);
 
@@ -407,7 +409,7 @@ function busCarbonEmission(editedTime, vehicle)
     Page.appendChild(Strees);
 
     Strees.addEventListener('click', () => {
-    TreesPerEmission(busCarbonE,editedTime,vehicle);
+    TreesPerEmission(busCraboncF, busCarbonE,editedTime,vehicle);
     });
     
   
@@ -433,9 +435,10 @@ function trainCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDivH);
 
     carbonEDivH.textContent+= "With the train";
-    carbonEDiv.textContent+= trainCarbonE; 
+    const trainF= formatNumberWithCommas(trainCarbonE);
+    carbonEDiv.textContent+= trainF; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
-    
+  
     Page.appendChild(carbonEDivH);
     Page.appendChild(carbonEDiv);
 
@@ -447,7 +450,7 @@ function trainCarbonEmission(editedTime, vehicle)
     Page.appendChild(Strees);
 
     Strees.addEventListener('click', () => {
-    TreesPerEmission(trainCarbonE,editedTime,vehicle);
+    TreesPerEmission(trainF, trainCarbonE,editedTime,vehicle);
     });
     
 
@@ -455,7 +458,7 @@ function trainCarbonEmission(editedTime, vehicle)
 
 
 }
-function TreesPerEmission(emission, editedTime, vehicle) {
+function TreesPerEmission(e, emission, editedTime, vehicle) {
     
     Page.innerHTML="";
     Page.textContent="";
@@ -466,8 +469,10 @@ function TreesPerEmission(emission, editedTime, vehicle) {
     TreeDiv.textContent += "With the " + vehicle + " as your mode of transportation, ";
     const Trees = (((emission / 1000) *252 / 20)).toFixed(1);
     const numTrees = Math.ceil(Trees);
+    const formatTrres =  formatNumberWithCommas(numTrees);
+    
 
-    TreeDiv.textContent += numTrees + " trees per year are required to offset " + emission + " grams of CO₂";
+    TreeDiv.textContent += formatTrres + " trees per year are required to offset " + e + " grams of CO₂";
     TreeDiv.classList.add('HeaderV');
 
     const Treepic = document.createElement('div');
@@ -484,7 +489,6 @@ function TreesPerEmission(emission, editedTime, vehicle) {
             treeCounter++;
             const treeHeight = Treepic.clientHeight;
             TreeDiv.style.marginTop = treeHeight + 'px';
-            TreeDiv.style.marginBottom = treeHeight + 'px';
             
         } else {
             clearInterval(interval);
@@ -518,14 +522,16 @@ function TreesPerEmission(emission, editedTime, vehicle) {
 
    carbonODiv.textContent+= "A bus emits ";
    const carCarbonB = emission.busCarbon(); 
-   carbonODiv.textContent+= carCarbonB; 
+   const busCarb =formatNumberWithCommas(carCarbonB);
+   carbonODiv.textContent+= busCarb; 
    carbonODiv.textContent+= " grams of Co2"; 
    
 
    const carbonTDiv = document.createElement('div');
    carbonTDiv.textContent ="A train emits ";
    const carCarbonT = emission.trainCarbon(); 
-   carbonTDiv.textContent+= carCarbonT;
+   const carbF = formatNumberWithCommas(carCarbonT);
+   carbonTDiv.textContent+= carbF ;
    carbonTDiv.textContent+= " grams of Co2";
 
   Page.classList.add('fourthPage');
@@ -564,14 +570,16 @@ function TreesPerEmission(emission, editedTime, vehicle) {
 
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
-    carbonODiv.textContent+= carCarbonC; 
+    const carbFu = formatNumberWithCommas(carCarbonC);
+    carbonODiv.textContent+= carbFu; 
     carbonODiv.textContent+= " grams of CO₂"; 
    
     
     const carbonTDiv = document.createElement('div');
     carbonTDiv.textContent ="A train emits ";
     const carCarbonT = emission.trainCarbon(); 
-    carbonTDiv.textContent+= carCarbonT;
+    const carbT= formatNumberWithCommas(carCarbonT);
+    carbonTDiv.textContent+= carbT;
     carbonTDiv.textContent+= " grams of CO₂";
 
     Page.classList.add('fourthPage');
@@ -610,13 +618,20 @@ function TreesPerEmission(emission, editedTime, vehicle) {
 
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
-    carbonODiv.textContent+= carCarbonC; 
+    
+    const carbCF =  formatNumberWithCommas(carCarbonC);
+    carbonODiv.textContent+= carbCF; 
+    
     carbonODiv.textContent+= " grams of CO₂"; 
 
     const carbonBDiv = document.createElement('div');
     carbonBDiv.textContent+= "A bus emits ";
     const carCarbonB = emission.busCarbon(); 
-    carbonBDiv.textContent+= carCarbonB; 
+    
+    const busCF =  formatNumberWithCommas(carCarbonB);
+
+    carbonBDiv.textContent+= busCF; 
+
     carbonBDiv.textContent+= " grams of CO₂"; 
    
     Page.classList.add('fourthPage');
@@ -943,6 +958,35 @@ class Utils {
 const tree1 = new Tree("#tree1");
 const tree2 = new Tree("#tree2");
 
+function formatNumberWithCommas(number) {
+    let numberStr = number.toString();
 
+    let parts = numberStr.split('.');
+    let integerPart = parts[0];
+    let decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+
+    let formattedInteger = '';
+    let commaCounter = 0;
+    for (let i = integerPart.length - 1; i >= 0; i--) {
+        formattedInteger = integerPart[i] + formattedInteger;
+        commaCounter++;
+        if (commaCounter % 3 === 0 && i > 0 && integerPart[i - 1] !== '-') {
+            formattedInteger = ',' + formattedInteger;
+            commaCounter = 0;
+            if (i > 1) {
+                formattedInteger =  formattedInteger ;
+            }
+        }
+    }
+    let formattedNumber = formattedInteger + decimalPart;
+    console.log("done");
+    console.log(formattedNumber);
+
+    return formattedNumber;
+}
+
+// Test cases
+console.log(formatNumberWithCommas(11940)); // Output: 11,940
+console.log(formatNumberWithCommas(1234567.89)); // Output: 1,234,567.89
 
 

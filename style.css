@@ -33,6 +33,12 @@ body
 
 }
 
+.boldNumber
+{
+
+    font-weight: bold;
+}
+
 
 
 .carImg {
@@ -340,7 +346,6 @@ grid-template-areas:
     justify-content: center;
     align-items: center;
 }
-
 
 
 
