@@ -19,7 +19,7 @@ homeLink.addEventListener("click", function(event) {
      Page.textContent = '';
 
      createFirstPage();
-     Page.classList.remove('homepage');
+   
      Page.classList.add('rhome');
 
    

@@ -581,7 +581,7 @@ button
 
 
     .homepage {
-       
+        
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 0.2fr 1fr 1fr;
         grid-template-areas:
@@ -591,6 +591,7 @@ button
     }
 
     .rhome {
+
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas:
