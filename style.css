@@ -249,43 +249,38 @@ grid-template-areas:
 
 }
 
-
 .awarenessPage
 {
    
     display: grid;
-  
-  
-    margin-bottom: 15rem;
+    min-width: 100vw;
+    min-height: 100vh;
     grid-template-columns: repeat(7,1fr);
-    grid-template-rows: 1fr 1fr 1fr min-content;
+    grid-template-rows: 0.1fr 0.3fr 0.5fr ;
     grid-template-areas:
     'logo . .  .  . header . '
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . '; 
    
 
-
 } 
-
 
 .awarenessPage > h2
 {
     grid-area:textA;
+    margin-top: 3rem;
   
-
 }
 
 .awarenessPage > h3
 {
     line-height:1.5rem;
     color:#01796F;
-    width: auto;
+    margin-top: -3rem;
     font-weight:500;
     padding: 3rem;
     font-size: 1rem;
     border-radius: 3rem;
-
     margin-bottom: 3rem;
     background-color: aliceblue;
     grid-area: contentA;
@@ -645,8 +640,8 @@ button
     display: grid;
     min-height: 100vh;
     width: 100vw; 
-    grid-template-columns: repeat(1,1fr) repeat(3,4fr) repeat(1,1fr);
-    grid-template-rows: 1fr 1fr 1fr min-content;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
     'logo header . . .'
     '. textA textA textA .'
