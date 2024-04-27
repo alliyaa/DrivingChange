@@ -307,7 +307,6 @@ grid-template-areas:
     background-color: aliceblue;
     line-height: 1.5rem;
  
- 
    
 }
 
@@ -336,8 +335,10 @@ grid-template-areas:
 
 .references
 {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -504,7 +505,6 @@ button
 }
 
 
-
 .TreeQ
 {
    font-size: 2rem;
@@ -512,11 +512,6 @@ button
 
 }
 
-.Treebtn
-{
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
 
 .fifthPage {
   
