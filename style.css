@@ -831,44 +831,9 @@ grid-area: textA;
 {
     margin-top: 1rem;
     max-width: 80vw;
-    grid-area: texta;
 }
 
 
-
-.fourthPage
-{   
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 0.4fr 0.3fr 0.3fr;
-    grid-template-areas:
-     '.  texta texta texta .' 
-    '.  box box box .' 
-    '.  textb textb textb .'
-    '.  btn btn btn  .';
- 
-
-}
-
-.TreeQs
-{
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    border: 2px solid yellow;
-    grid-area: textb;
-    max-width: 60vw;
-}
-
-
-.fourthPage > button
-{
-    grid-area: btn;
-    margin-bottom: 1rem;
-
-}
 
    
  
