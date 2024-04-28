@@ -175,8 +175,9 @@ display: grid;
 
 
 grid-template-columns: repeat(7,4fr);
-grid-template-rows:  0.5fr 0.5fr 0.5fr 0.5fr  min-content;
+grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr  min-content;
 grid-template-areas:
+'. logo header . . . .'
   ' text text text text text text text '
   '. . carimg . carbtn . .'
   '. . busimg . busbtn . .'
@@ -254,8 +255,9 @@ grid-template-areas:
     min-width: 100vw;
     min-height: 100vh;
     grid-template-columns: repeat(7,1fr);
-    grid-template-rows: 0.1fr 0.3fr 0.5fr ;
+    grid-template-rows: 0.2fr 0.3fr 0.3fr;
     grid-template-areas:
+    '. logo header . . . .'
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . '; 
    
@@ -265,7 +267,6 @@ grid-template-areas:
 .awarenessPage > h2
 {
     grid-area:textA;
-    margin-top: 3rem;
   
 }
 
@@ -348,8 +349,9 @@ grid-template-areas:
     min-height: 100vh;
     width: 100vw; 
     grid-template-columns: repeat(1,2fr) repeat(5,4fr) repeat(1,2fr);
-    grid-template-rows: 0.5fr 0.7fr min-content;
+    grid-template-rows: 0.2fr 0.5fr 0.7fr ;
     grid-template-areas:
+    '. logo header . . . .'
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . ';
 
@@ -409,8 +411,11 @@ button
     min-height: 100vh;
     width: 100vw;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 0.4fr 0.2fr 0.3fr min-content;
-    grid-template-areas: '. . texta texta texta . .' '. . box box box . .' '. . btn btn btn . .';
+    grid-template-rows: 0.4fr 0.3fr 0.3fr;
+    grid-template-areas:
+     '. . texta texta texta . .' 
+    '. . box box box . .' 
+    '. . btn btn btn . .';
 }
 
 .thirdPage > h3 {
@@ -558,11 +563,12 @@ button
 
 @media only screen and (max-width: 600px) {
     .nav {
-        grid-template-columns: 0.1fr 1fr 1fr ; 
-        grid-template-rows: 0.5fr; 
+        grid-template-columns: 0.1fr 1fr 0.1fr ; 
+        grid-template-rows: 1fr; 
         grid-template-areas: 
             'logo header .';
             font-size: smaller;
+            max-height: 1rem;
     }
 
 
@@ -810,7 +816,7 @@ font-size: 2.5rem;
 
 
     grid-template-columns: repeat(7,1fr);
-    grid-template-rows:  0.5fr 0.7fr min-content;
+    grid-template-rows:  0.2fr 0.5fr min-content;
     grid-template-areas:
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . ';
