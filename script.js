@@ -115,6 +115,7 @@ futureLink.addEventListener("click", function(event) {
     Page.classList.remove('thirdPage');
     Page.classList.remove('fifthPage');
     Page.classList.remove('fourthPage');
+    Page.classList.remove('rhome');
 
       
     Page.innerHTML="";
@@ -148,6 +149,7 @@ createFirstPage();
         Page.classList.remove('fifthPage');
         Page.classList.remove('fourthPage');
         Page.classList.remove('futurePage');
+        Page.classList.remove('rhome');
     
         const Header = document.createElement('div');
         Header.innerHTML = "Find Out Your <br>  Carbon Footprint!";
@@ -177,6 +179,7 @@ createFirstPage();
         Page.classList.remove('fourthPage');
         Page.classList.remove('futurePage');
         Page.classList.add('secondPageDiv');
+        Page.classList.remove('rhome');
         
         Page.innerHTML = "<h5>Choose Your Mode of Transportation</h5>";
     
@@ -242,6 +245,7 @@ function TripTime(vehicle)
    Page.classList.remove('fifthPage');
    Page.classList.remove('fourthPage');
    Page.classList.remove('futurePage');
+   Page.classList.remove('rhome');
   
    Page.classList.add('thirdPage');
    
@@ -984,25 +988,3 @@ function formatNumberWithCommas(number) {
 
     return formattedNumber;
 }
-
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) =>
-    {
-        console.log(entry);
-        if(entry.isIntersecting)
-        {
-            entry.target.classList.add('show');
-        }
-        else
-        {
-            entry.target.classList.remove('show');
-        }
-
-    });
-
-});
-
-const scH = document.querySelector('.carbon');
-scH.forEach((el) => observer.observe(el));
-
