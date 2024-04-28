@@ -165,8 +165,6 @@ header{
 .secondPageDiv
 {
 display: grid;
-
-
 grid-template-columns: repeat(7,4fr);
 grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr  min-content;
 grid-template-areas:
@@ -665,7 +663,7 @@ button
         max-width: 11rem;
         max-height: 5rem;
         margin-right: -2.5rem;
-        border: 2px solid rgb(9, 49, 72);
+        border: 2px solid rgb(143, 21, 29);
                
     }
 
@@ -745,14 +743,11 @@ button
         border-radius: 0.6rem;
     }
 
-
-
-
-
     .HeaderV
   {
     font-size: 1.3rem;
     max-width: 80vw;
+    margin-top: 1rem;
 
   }
     .tree {
@@ -784,7 +779,7 @@ font-size: 2.5rem;
 
 .fpH
 {
-    margin-top: 1rem;
+    margin-top: 0.1rem;
 
 }
 
@@ -843,7 +838,8 @@ grid-area: textA;
 .awarenessPage > h2
 {
     margin-bottom: 1rem;
-    max-width: 70vw;
+    max-width: 80vw;
+    margin-top: 3rem;
 
 }
 
@@ -853,8 +849,6 @@ grid-area: textA;
     margin-bottom: 1rem;
 
 }
-
-
 
 
     
