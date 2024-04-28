@@ -440,6 +440,8 @@ button
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+ 
  
 
 }
@@ -450,6 +452,7 @@ button
     margin-top: 5rem;
     font-weight: 500;
     margin-bottom: 5rem;
+
 }
 
 
@@ -499,7 +502,7 @@ button
 
 
 .TreeBackg {
-    margin-top: 1rem; /* Adjust margin top as needed */
+    margin-top: 1rem; 
     text-align: center;
     margin-bottom: 4rem;
     max-width: 80vw;
@@ -647,7 +650,7 @@ button
         max-width: 11rem;
         max-height: 5rem;
         margin-right: -2.5rem;
-        border: 2px solid rgb(251, 255, 3);
+        border: 2px solid rgb(101, 41, 230);
                
     }
 
@@ -716,7 +719,7 @@ button
     .editableBox {
         margin-top: 10rem;
         margin-bottom: 10rem;
-       
+       grid-area: box;
     }
 
     .carbon {
@@ -838,8 +841,42 @@ grid-area: textA;
 {
     margin-top: 1rem;
     max-width: 80vw;
-    
+    grid-area: texta;
 }
+
+
+
+.fourthPage
+{   
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 0.4fr 0.3fr 0.3fr;
+    grid-template-areas:
+     '.  texta texta texta .' 
+    '.  box box box .' 
+    '.  textb textb textb .'
+    '.  btn btn btn  .';
+ 
+
+}
+
+.fourthPage > h4
+{
+    font-size: 1rem;
+    margin-top: 1rem;
+    grid-area: texta;
+}
+
+
+.fourthPage > button
+{
+    grid-area: btn;
+
+}
+
    
  
 }
