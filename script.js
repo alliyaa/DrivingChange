@@ -249,7 +249,6 @@ function TripTime(vehicle)
   
    Page.classList.add('thirdPage');
    
- 
    
    Page.innerHTML += " <h3> Enter your Trip Distance in Kilometres </h3> ";
    
