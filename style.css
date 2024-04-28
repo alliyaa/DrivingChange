@@ -11,6 +11,11 @@ body
    
 }
 
+
+.L{
+    font-size: 1.5rem;
+}
+
 #tree1 {
 	display: block;
 	margin: auto;
@@ -329,7 +334,6 @@ grid-template-areas:
 }
 
 
-
 .futurePage
 {
 
@@ -480,17 +484,6 @@ button
   
 }
 
-
-
-
-.TreeQ
-{
-   font-size: 2rem;
-   margin-top: 4rem;
-
-}
-
-
 .fifthPage {
   
     display: flex;
@@ -500,9 +493,15 @@ button
 
 }
 
+.TreeQ
+{
+   font-size: 2rem;
+   margin-top: 4rem;
+}
+
 
 .TreeBackg {
-    margin-top: 1rem; 
+    margin-top: 1rem; /* Adjust margin top as needed */
     text-align: center;
     margin-bottom: 4rem;
     max-width: 80vw;
@@ -514,10 +513,11 @@ button
     border-radius: 1.2rem;
 }
 
+
 .tree {
    
     width: 3rem;
-    height: auto;
+    height: 3rem;
     margin-right: 5px;
 }
 
@@ -649,7 +649,7 @@ button
         max-width: 11rem;
         max-height: 5rem;
         margin-right: -2.5rem;
-        border: 2px solid rgb(234, 3, 255);
+        border: 2px solid rgb(251, 255, 3);
                
     }
 
@@ -823,9 +823,9 @@ grid-area: textA;
 
 .awarenessPage > h2
 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     max-width: 80vw;
-    margin-top: 3rem;
+    margin-top: 5rem;
 
 }
 
@@ -836,8 +836,7 @@ grid-area: textA;
 
 }
 
-
-    
+   
  
 }
 

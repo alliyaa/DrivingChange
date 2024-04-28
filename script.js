@@ -474,7 +474,9 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
     
 
     TreeDiv.textContent += formatTrres + " trees per year are required to offset " + e + " grams of CO₂";
-    TreeDiv.classList.add('HeaderV');
+    TreeDiv.classList.add('L');
+    Page.appendChild(TreeDiv);
+
 
     const Treepic = document.createElement('div');
     Treepic.classList.add('TreeBackg');
@@ -489,18 +491,20 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
             Treepic.appendChild(treeImg);
             treeCounter++;
             const treeHeight = Treepic.clientHeight;
-            TreeDiv.style.marginTop = treeHeight + 'px';
+            TreeDiv.style.marginTop = treeHeight/4 + 'px';
+          
             
         } else {
             clearInterval(interval);
-
+         
         
         }
     }, 300);
    
-    Page.appendChild(TreeDiv);
     Page.appendChild(Treepic);
 
+
+  
    
  
     
@@ -520,6 +524,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    const carbonODiv = document.createElement('div');
    const carbonHDiv = document.createElement('div');
    carbonHDiv.textContent+="For the same trip";
+   carbonHDiv.classList.add('L');
 
    carbonODiv.textContent+= "A bus emits ";
    const carCarbonB = emission.busCarbon(); 
@@ -567,6 +572,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
 
     const carbonHDiv = document.createElement('div');
     carbonHDiv.textContent+="For the same trip:";
+    carbonHDiv.classList.add('L');
 
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
@@ -614,6 +620,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
     
     const carbonHDiv = document.createElement('div');
     carbonHDiv.textContent+="For the same trip";
+    carbonHDiv.classList.add('L');
 
     carbonODiv.textContent+= "A car emits ";
     const carCarbonC = emission.carCarbon(); 
