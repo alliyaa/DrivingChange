@@ -349,7 +349,6 @@ function carCarbonEmission(editedTime, vehicle)
     const carbonEDiv = document.createElement('div');
 
     
-    carbonEDivH.classList.add('fpH');
     carbonEDiv.classList.add('fp');
    
 
@@ -395,7 +394,6 @@ function busCarbonEmission(editedTime, vehicle)
     const carbonEDivH = document.createElement('div');
    
         
-    carbonEDivH.classList.add('fpH');
     carbonEDiv.classList.add('fp');
     Page.appendChild(carbonEDivH)
 
@@ -433,8 +431,7 @@ function trainCarbonEmission(editedTime, vehicle)
     const carbonEDivH = document.createElement('div');
     const carbonEDiv = document.createElement('div');
   
-          
-    carbonEDivH.classList.add('fpH');
+
     carbonEDiv.classList.add('fp');
     Page.appendChild(carbonEDivH);
 
@@ -545,7 +542,6 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
 
 
    carbonODiv.classList.add('carbon');
-   carbonHDiv.classList.add('HeaderV');
    carbonTDiv.classList.add('carbon');
    
    document.body.appendChild(Page); 
@@ -593,7 +589,6 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
 
 
     carbonODiv.classList.add('carbon');
-    carbonHDiv.classList.add('HeaderV');
     carbonTDiv.classList.add('carbon');
 
     
@@ -645,7 +640,6 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
 
   
     carbonODiv.classList.add('carbon');
-    carbonHDiv.classList.add('HeaderV');
     carbonBDiv.classList.add('carbon');
     document.body.appendChild(Page);
 

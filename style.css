@@ -513,9 +513,8 @@ button
 }
 
 
-
 .TreeBackg {
-    margin-top: 1rem; /* Adjust margin top as needed */
+    margin-top: 1rem; 
     text-align: center;
     margin-bottom: 4rem;
     max-width: 80vw;
@@ -546,7 +545,6 @@ button
     max-height: 2rem;
        
 }
-
 
 
 
