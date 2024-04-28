@@ -361,8 +361,11 @@ function carCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDiv);
   
 
+    const TreeQs= document.createElement('div');
    
-    Page.innerHTML+=" <h4> How many trees need to be planted per year to offset your net carbon emissions? </h4>";
+    TreeQs.textContent+=" How many trees need to be planted per year to offset your net carbon emissions? ";
+    Page.appendChild(TreeQs);
+ 
     const Strees = document.createElement('button');
     Strees.textContent+="See Trees";
     Page.appendChild(Strees);
@@ -403,10 +406,12 @@ function busCarbonEmission(editedTime, vehicle)
     carbonEDiv.textContent+= busCraboncF; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
     Page.appendChild(carbonEDiv);
-
+ 
+    const TreeQs= document.createElement('div');
    
-    Page.innerHTML+=" <h4> How many trees need to be planted per year to offset your net carbon emissions? </h4>";
-
+    TreeQs.textContent+=" How many trees need to be planted per year to offset your net carbon emissions? ";
+    Page.appendChild(TreeQs);
+ 
     const Strees = document.createElement('button');
     Strees.textContent+="See Trees";
     Page.appendChild(Strees);
@@ -445,9 +450,11 @@ function trainCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDivH);
     Page.appendChild(carbonEDiv);
 
-    
+    const TreeQs= document.createElement('div');
    
-    Page.innerHTML+=" <h4> How many trees need to be planted per year to offset your net carbon emissions? </h4>";
+    TreeQs.textContent+=" How many trees need to be planted per year to offset your net carbon emissions? ";
+    Page.appendChild(TreeQs);
+ 
     const Strees = document.createElement('button');
     Strees.textContent+="See Trees";
     Page.appendChild(Strees);
