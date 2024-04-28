@@ -498,6 +498,7 @@ button
     background-color: white;
     padding: 3.5rem;
     border-radius: 1.2rem;
+  
 }
 
 .HeaderV
@@ -568,14 +569,9 @@ button
 @media only screen and (max-width: 600px) {
     .nav {
         grid-template-columns: 0.1fr 0.2fr 1fr 1fr ; 
-        grid-template-rows: 0.1fr 0.3fr 0.3fr 0.4fr 0.4fr 0.1fr min-content; 
-        grid-template-areas:
-            '. . logo . .'
-            '. . . . .'
-            '. . . . .'
-            '. . header .'
-            '. .  main .'
-            '. . button .';
+        grid-template-rows: 0.5fr; 
+        grid-template-areas: 
+            'logo . header .';
             font-size: smaller;
     }
 
@@ -617,15 +613,15 @@ button
 
 
     .secondPageDiv {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(1, 1fr) repeat(1,0.5fr) repeat(1,1fr); 
         margin-bottom: 5rem;
         grid-template-rows: auto; 
         grid-template-areas:
-          'logo header'
-          'text text'
-          'carimg carbtn'
-          'busimg busbtn'
-          'trainimg trainbtn';
+          'logo . header'
+          'text . text'
+          'carimg .  carbtn'
+          'busimg .  busbtn'
+          'trainimg . trainbtn';
       }
 
 
@@ -674,17 +670,9 @@ button
       
     }
 
-    
-    .navitems li:first-child {
-        margin-left: -1rem;
-    }
-
-
-
 
     .logo {
         margin-left: auto;
-        margin-right: -1.2rem;
         max-width: 11rem;
         max-height: 5rem;
                
@@ -767,11 +755,13 @@ button
     }
 
 
+
+
+
     .HeaderV
   {
     font-size: 1.3rem;
     max-width: 80vw;
-    margin-top: 1rem;
 
   }
     .tree {
@@ -830,9 +820,8 @@ font-size: 2.5rem;
 
 
     grid-template-columns: repeat(7,1fr);
-    grid-template-rows: 0.1fr 0.5fr 0.7fr min-content;
+    grid-template-rows:  0.5fr 0.7fr min-content;
     grid-template-areas:
-    'logo . .  .  . header . '
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . ';
 
@@ -843,7 +832,7 @@ font-size: 2.5rem;
 .futurePage > h3{
 
 grid-area: textA;
-margin-top: 2rem;
+
 }
 
 .futurePage > p {
@@ -864,7 +853,6 @@ margin-top: 2rem;
 {
     max-width: 60vw;
     margin-bottom: 1rem;
-    margin-top: 2rem;
 
 }
 

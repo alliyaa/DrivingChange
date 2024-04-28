@@ -985,8 +985,24 @@ function formatNumberWithCommas(number) {
     return formattedNumber;
 }
 
-// Test cases
-console.log(formatNumberWithCommas(11940)); // Output: 11,940
-console.log(formatNumberWithCommas(1234567.89)); // Output: 1,234,567.89
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) =>
+    {
+        console.log(entry);
+        if(entry.isIntersecting)
+        {
+            entry.target.classList.add('show');
+        }
+        else
+        {
+            entry.target.classList.remove('show');
+        }
+
+    });
+
+});
+
+const scH = document.querySelector('.carbon');
+scH.forEach((el) => observer.observe(el));
 
