@@ -490,8 +490,21 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
             treeImg.classList.add('tree');
             Treepic.appendChild(treeImg);
             treeCounter++;
+            const navHeight = document.querySelector('nav').clientHeight; 
             const treeHeight = Treepic.clientHeight;
-            TreeDiv.style.marginTop = treeHeight/4 + 'px';
+            let marginTop = treeHeight / 2; 
+            const remToPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const maxMarginTopRem = 8; 
+            const maxMarginTopPx = maxMarginTopRem * remToPx; 
+            const minMarginTopPx = navHeight + (2 * remToPx); 
+
+            if (marginTop < minMarginTopPx) {
+                marginTop = minMarginTopPx;
+            } else if (marginTop > maxMarginTopPx) {
+                marginTop = maxMarginTopPx;
+            }
+
+            TreeDiv.style.marginTop = marginTop + 'px';
           
             
         } else {
