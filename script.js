@@ -447,7 +447,7 @@ function trainCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDiv);
 
    
-    Page.innerHTML+="<h4> How many trees need to be planted yearly to offset your carbon emissions per trip? </h4>";
+    Page.innerHTML+="<h4> How many trees need to be planted to offset your yearly carbon emissions? </h4>";
   
  
     const Strees = document.createElement('button');
@@ -476,7 +476,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
     const formatTrres =  formatNumberWithCommas(numTrees);
     
 
-    TreeDiv.textContent += formatTrres + " trees per year are required  per year to offset " + e + " grams of CO₂";
+    TreeDiv.textContent += formatTrres + " trees per year are required per year to offset " + e + " grams of CO₂";
     TreeDiv.classList.add('L');
     Page.appendChild(TreeDiv);
 
