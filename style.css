@@ -465,12 +465,7 @@ button
 }
 
 
-.fpH
-{
-   font-size:2rem;
-   margin-top: 4rem;
-  
-}
+
 
 .carbon
 {
@@ -485,14 +480,7 @@ button
   
 }
 
-.HeaderV
-{
-    font-size: 1.5rem;
-    margin-top: 4rem;
-    max-width: 80vw;
-    margin-bottom: 2rem;
 
-}
 
 
 .TreeQ
@@ -661,7 +649,7 @@ button
         max-width: 11rem;
         max-height: 5rem;
         margin-right: -2.5rem;
-        border: 2px solid rgb(143, 21, 29);
+        border: 2px solid rgb(234, 3, 255);
                
     }
 
