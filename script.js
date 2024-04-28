@@ -353,6 +353,7 @@ function carCarbonEmission(editedTime, vehicle)
    
 
     carbonEDivH.textContent+="With the car ";
+    carbonEDivH.classList.add('L')
     const fcarCarbonC = formatNumberWithCommas(carCarbonC);
     carbonEDiv.textContent+=fcarCarbonC; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
@@ -398,6 +399,7 @@ function busCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDivH)
 
     carbonEDivH.textContent+= "With the Bus";
+    carbonEDivH.classList.add('L')
     const busCraboncF = formatNumberWithCommas(busCarbonE);
     carbonEDiv.textContent+= busCraboncF; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
@@ -436,6 +438,7 @@ function trainCarbonEmission(editedTime, vehicle)
     Page.appendChild(carbonEDivH);
 
     carbonEDivH.textContent+= "With the train";
+    carbonEDivH.classList.add('L');
     const trainF= formatNumberWithCommas(trainCarbonE);
     carbonEDiv.textContent+= trainF; 
     carbonEDiv.textContent+= " grams of CO₂ are emitted";
