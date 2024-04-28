@@ -175,15 +175,12 @@ display: grid;
 
 
 grid-template-columns: repeat(7,4fr);
-grid-template-rows: 0.2fr 0.5fr 0.5fr 0.5fr 0.5fr  min-content;
+grid-template-rows:  0.5fr 0.5fr 0.5fr 0.5fr  min-content;
 grid-template-areas:
-'logo . .  .  . header .  '
   ' text text text text text text text '
   '. . carimg . carbtn . .'
   '. . busimg . busbtn . .'
   '. . trainimg . trainbtn . .';
-
-       
 
 
 }
@@ -197,19 +194,14 @@ grid-template-areas:
     text-align: center;
     color:azure;
     margin-bottom: 5rem;
- 
   
 }
-
-
 
 
 .car
 {
     grid-area: carbtn;
-  
-
-   
+    
 }
 
 .bus
@@ -264,7 +256,6 @@ grid-template-areas:
     grid-template-columns: repeat(7,1fr);
     grid-template-rows: 0.1fr 0.3fr 0.5fr ;
     grid-template-areas:
-    'logo . .  .  . header . '
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . '; 
    
@@ -357,9 +348,8 @@ grid-template-areas:
     min-height: 100vh;
     width: 100vw; 
     grid-template-columns: repeat(1,2fr) repeat(5,4fr) repeat(1,2fr);
-    grid-template-rows: 0.1fr 0.5fr 0.7fr min-content;
+    grid-template-rows: 0.5fr 0.7fr min-content;
     grid-template-areas:
-    'logo . .  .  . header . '
     '. .  textA textA textA . . '
       '. contentA contentA contentA contentA contentA . ';
 
@@ -568,10 +558,10 @@ button
 
 @media only screen and (max-width: 600px) {
     .nav {
-        grid-template-columns: 0.1fr 0.2fr 1fr 1fr ; 
+        grid-template-columns: 0.1fr 1fr 1fr ; 
         grid-template-rows: 0.5fr; 
         grid-template-areas: 
-            'logo . header .';
+            'logo header .';
             font-size: smaller;
     }
 
@@ -613,15 +603,15 @@ button
 
 
     .secondPageDiv {
-        grid-template-columns: repeat(1, 1fr) repeat(1,0.5fr) repeat(1,1fr); 
+        grid-template-columns: repeat(1, 1fr) repeat(1,0.5fr) repeat(1,1fr) repeat(1,0.5fr); 
         margin-bottom: 5rem;
         grid-template-rows: auto; 
         grid-template-areas:
-          'logo . header'
-          'text . text'
-          'carimg .  carbtn'
-          'busimg .  busbtn'
-          'trainimg . trainbtn';
+          'logo . header .'
+          'text . text .'
+          'carimg .  carbtn .'
+          'busimg .  busbtn .'
+          'trainimg . trainbtn .';
       }
 
 
