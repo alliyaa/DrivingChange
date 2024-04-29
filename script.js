@@ -74,7 +74,6 @@ refLink.addEventListener("click", function(event) {
     Page.textContent+="";
     
     
-
     Page.innerHTML = `
     <h3 class="section-heading">Assumptions</h3>
     <p class="section-content">
@@ -549,7 +548,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    const carCarbonB = emission.busCarbon(); 
    const busCarb =formatNumberWithCommas(carCarbonB);
    carbonODiv.textContent+= busCarb; 
-   carbonODiv.textContent+= " grams of Co2"; 
+   carbonODiv.textContent+= " grams of CO₂";
    
 
    const carbonTDiv = document.createElement('div');
@@ -557,7 +556,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    const carCarbonT = emission.trainCarbon(); 
    const carbF = formatNumberWithCommas(carCarbonT);
    carbonTDiv.textContent+= carbF ;
-   carbonTDiv.textContent+= " grams of Co2";
+   carbonTDiv.textContent+= " grams of CO₂";
 
   Page.classList.add('fourthPage');
   Page.appendChild(carbonHDiv);
