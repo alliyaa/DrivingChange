@@ -87,8 +87,8 @@ refLink.addEventListener("click", function(event) {
     <h3 class="section-heading">References</h3>
     <p class="section-content">
         1-Congressional Budget Office. “The Role of Transportation in U.S. Greenhouse Gas Emissions.” Congressional Budget Office, December 2022, <br> <a href="http://www.cbo.gov/system/files/2022-12/58566-co2-emissions-transportation.pdf">www.cbo.gov/system/files/2022-12/58566-co2-emissions-transportation.pdf</a>.<br> <br>
-        2-United States Environmental Protection Agency. “Greenhouse Gas Emissions from a Typical Passenger Vehicle.” EPA,  <br> <a href="http://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-">www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-</a>.<br> <br> <br>
-        3-Oak Ridge National Laboratory. “Transportation Energy Data Book Edition 39.” Oak Ridge National Laboratory, February 2021, <br> <a href="http://tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf#page=68">tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf#page=68</a>.<br> <br> <br>
+        2-United States Environmental Protection Agency. “Greenhouse Gas Emissions from a Typical Passenger Vehicle.” EPA,  <br> <a href="http://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-">https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle</a>.<br> <br> <br>
+        3-Oak Ridge National Laboratory. “Transportation Energy Data Book Edition 39.” Oak Ridge National Laboratory, February 2021, <br> <a href="https://tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf">https://tedb.ornl.gov/wp-content/uploads/2021/02/TEDB_Ed_39.pdf</a>.<br> <br> <br>
         4-Embassy of The Kingdom of Saudi Arabia. “Transportation & Communication.” The Embassy of The Kingdom of Saudi Arabia,  <br> <a href="http://saudiembassy.net">saudiembassy.net</a>.<br> <br> 
         5-Our World in Data. “Saudi Arabia: CO2 Country Profile.” Our World in Data,  <br> <a href="http://ourworldindata.org/co2/country/saudi-arabia">ourworldindata.org/co2/country/saudi-arabia</a>.<br><br>
         6-Riyadh Bus. “Plan.”  <br> <a href="http://riyadhbus.sa">riyadhbus.sa</a>.<br> <br>
@@ -476,7 +476,8 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
     const formatTrres =  formatNumberWithCommas(numTrees);
     
 
-    TreeDiv.textContent += formatTrres + " trees per year are required per year to offset " + e + " grams of CO₂";
+    TreeDiv.innerHTML+=" Yearly CO₂ emissions: " + e +  " grams <br> <br>";
+    TreeDiv.innerHTML += "Trees Required: " + formatTrres;
     TreeDiv.classList.add('L');
     Page.appendChild(TreeDiv);
 
