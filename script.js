@@ -355,14 +355,15 @@ function carCarbonEmission(editedTime, vehicle)
     carbonEDivH.classList.add('L')
     const fcarCarbonC = formatNumberWithCommas(carCarbonC);
     carbonEDiv.textContent+=fcarCarbonC; 
-    carbonEDiv.textContent+= " grams of CO₂ are emitted per trip";
+    carbonEDiv.textContent+= " grams of CO₂ per trip";
     
     Page.appendChild(carbonEDivH);
     Page.appendChild(carbonEDiv);
   
 
      
-    Page.innerHTML+="<h4> How many trees need to be planted yearly to offset your carbon emissions per trip? </h4>";
+    Page.innerHTML+="<h4> How many trees need to be planted to offset your yearly carbon emissions? </h4>";
+  
 
     const Strees = document.createElement('button');
     Strees.textContent+="See Trees";
@@ -402,11 +403,12 @@ function busCarbonEmission(editedTime, vehicle)
     carbonEDivH.classList.add('L')
     const busCraboncF = formatNumberWithCommas(busCarbonE);
     carbonEDiv.textContent+= busCraboncF; 
-    carbonEDiv.textContent+= " grams of CO₂ are emitted per trip";
+    carbonEDiv.textContent+= " grams of CO₂ per trip";
     Page.appendChild(carbonEDiv);
  
       
-    Page.innerHTML+="<h4> How many trees need to be planted yearly to offset your carbon emissions per trip? </h4>";
+    Page.innerHTML+="<h4> How many trees need to be planted to offset your yearly carbon emissions? </h4>";
+  
  
     const Strees = document.createElement('button');
     Strees.textContent+="See Trees";
@@ -441,7 +443,7 @@ function trainCarbonEmission(editedTime, vehicle)
     carbonEDivH.classList.add('L');
     const trainF= formatNumberWithCommas(trainCarbonE);
     carbonEDiv.textContent+= trainF; 
-    carbonEDiv.textContent+= " grams of CO₂ are emitted per trip";
+    carbonEDiv.textContent+= " grams of CO₂ per trip";
   
     Page.appendChild(carbonEDivH);
     Page.appendChild(carbonEDiv);

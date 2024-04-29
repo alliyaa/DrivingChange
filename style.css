@@ -754,7 +754,7 @@ font-size: 2.5rem;
 .fp
 {
  
-    padding:1.5rem;
+    padding:0.5rem;
 }
 
 
@@ -776,9 +776,9 @@ font-size: 2.5rem;
 
 .section-content:last-child{
 
-    padding-left: 3.1rem;
-    padding-right: 3.1rem;
-    max-width: 60vw;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+    max-width: 65vw;
      
 }
 
