@@ -768,7 +768,7 @@ font-size: 2.5rem;
 
 .section-content{
 
-    max-width: 60vw;
+    max-width: 65vw;
     padding: 2rem;
    
 }
@@ -801,6 +801,8 @@ font-size: 2.5rem;
 
 grid-area: textA;
 
+max-width: 65vw;
+
 }
 
 .futurePage > p {
@@ -821,7 +823,7 @@ grid-area: textA;
 
 .awarenessPage > h3
 {
-    max-width: 80vw;
+    max-width: 85vw;
     margin-bottom: 1rem;
 
 }
