@@ -541,7 +541,7 @@ button
 @media only screen and (max-width: 600px) {
     .nav {
         place-items: center;
-        max-width: 100vw;
+        max-width: 80vw;
         grid-template-columns: 0.1fr 1fr 0.1fr ; 
         grid-template-rows: 1fr; 
         grid-template-areas: 
