@@ -539,16 +539,25 @@ button
 
 @media only screen and (max-width: 600px) {
     .nav {
+        display: grid;
         place-items: center;
-        width: 80vw;
-        grid-template-columns: 0.1fr 0.8fr 0.1fr ; 
-        grid-template-rows: 1fr; 
-        grid-template-areas: 
-            'logo header .';
-            font-size: smaller;
-            max-height: 1rem;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: 1fr;
+        gap: 0.6rem; 
+        font-size: smaller;
     }
-
+    
+    .navitems {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navitems li {
+        margin-right: 0.6rem;
+    }
+    
 
     .homepage {
 
@@ -625,22 +634,12 @@ button
     
     }
 
-    .navitems {
-        justify-content: center;
-        font-size: 0.09rem;
-       
-    }
+   
 
     button {
         margin: 0 auto; 
     }
 
-
-    .navitems li {
-        margin-right: 0.6rem; 
-        font-size: 0.1rem;
-      
-    }
 
 
     .logo {
