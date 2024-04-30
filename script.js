@@ -220,7 +220,7 @@ createFirstPage();
            
             TripTime('train');
         });
-        trainButton.textContent = 'Train';
+        trainButton.textContent = 'Metro';
         Page.appendChild(trainButton);
         trainButton.classList.add('train');
     
@@ -438,7 +438,7 @@ function trainCarbonEmission(editedTime, vehicle)
     carbonEDiv.classList.add('fp');
     Page.appendChild(carbonEDivH);
 
-    carbonEDivH.textContent+= "With the train";
+    carbonEDivH.textContent+= "With the metro";
     carbonEDivH.classList.add('L');
     const trainF= formatNumberWithCommas(trainCarbonE);
     carbonEDiv.textContent+= trainF; 
@@ -471,13 +471,19 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    
     Page.classList.add('fifthPage');
 
+    const Temission = ((emission/1000) *252).toFixed(0);
+  
+    
+    const TemissionS = ((emission) *252).toFixed(0);
+    const TreeEmissions =  formatNumberWithCommas(TemissionS);
+
     const TreeDiv = document.createElement('div');
-    const Trees = (((emission / 1000) *252 / 20)).toFixed(1);
+    const Trees = ((Temission / 20)).toFixed(1);
     const numTrees = Math.ceil(Trees);
     const formatTrres =  formatNumberWithCommas(numTrees);
     
 
-    TreeDiv.innerHTML+=" Yearly CO₂ emissions: " + e +  " grams <br> <br>";
+    TreeDiv.innerHTML+=" Yearly CO₂ emissions: " + TreeEmissions +  " grams <br> <br>";
     TreeDiv.innerHTML += "Trees Required: " + formatTrres;
     TreeDiv.classList.add('L');
     Page.appendChild(TreeDiv);
@@ -552,7 +558,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    
 
    const carbonTDiv = document.createElement('div');
-   carbonTDiv.textContent ="A train emits ";
+   carbonTDiv.textContent ="A metro emits ";
    const carCarbonT = emission.trainCarbon(); 
    const carbF = formatNumberWithCommas(carCarbonT);
    carbonTDiv.textContent+= carbF ;
@@ -600,7 +606,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
    
     
     const carbonTDiv = document.createElement('div');
-    carbonTDiv.textContent ="A train emits ";
+    carbonTDiv.textContent ="A metro emits ";
     const carCarbonT = emission.trainCarbon(); 
     const carbT= formatNumberWithCommas(carCarbonT);
     carbonTDiv.textContent+= carbT;
