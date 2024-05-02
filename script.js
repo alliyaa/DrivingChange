@@ -523,7 +523,7 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
          
         
         }
-    }, 300);
+    }, 160);
    
     Page.appendChild(Treepic);
 
@@ -673,15 +673,13 @@ function TreesPerEmission(e, emission, editedTime, vehicle) {
     carbonODiv.classList.add('carbon');
     carbonBDiv.classList.add('carbon');
     document.body.appendChild(Page);
-
-
+    
     });
  }
 
     document.body.appendChild(Page); 
    
 }
-
 
 
 // Creating The Tree Animation on the First Page
