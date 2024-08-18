@@ -75,6 +75,7 @@ body
 
 .homepage
 {
+margin-top: 10rem;
 display: grid;
 place-items: center; 
 min-height: 100vh;
@@ -390,8 +391,8 @@ button
 
 .logo
 {
-    max-width: 18rem;
-    max-height: 10rem;
+    max-width: 5rem;
+    max-height: 5rem;
     margin-left: 1rem;
     grid-area: logo;
  
@@ -838,6 +839,7 @@ max-width: 65vw;
 
    
  
+
+
+
 }
-
-
